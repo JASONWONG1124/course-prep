@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三和 一人公司自媒体商业课 课前准备</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#111111;--ink-dim:#555555;--ink-muted:#999999;--ink-ghost:#cccccc;
+  --bg:#fafaf7;--card:#ffffff;--rule:#e5e5e0;--rule-strong:#d4d4cf;
+  --accent:#d64500;--green:#2d6a4f;
+--font-sans:-apple-system,"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+--font-mono:"SF Mono",Menlo,Consolas,monospace;
+  --fs-display:56px;--lh-display:1.1;--fw-display:700;
+  --fs-h1:40px;--lh-h1:1.15;--fw-h1:600;
+  --fs-h2:24px;--lh-h2:1.3;--fw-h2:600;
+  --fs-h3:18px;--lh-h3:1.4;--fw-h3:600;
+  --fs-body:15px;--lh-body:1.7;--fw-body:400;
+  --fs-small:13px;--lh-small:1.5;--fw-small:400;
+  --fs-mono:12px;--lh-mono:1.5;--fw-mono:500;
+  --fs-micro:11px;--lh-micro:1.4;--fw-micro:500;
+  --ls-tight:-.02em;--ls-title:-.01em;--ls-micro:.04em;
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;
+  --sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-14:56px;--sp-20:80px;
+  --container-max:1200px;--page-margin:40px;--topbar-h:56px;
+  --tx:.12s ease;--radius:0;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);font-weight:var(--fw-body);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit;text-decoration:none;transition:color var(--tx)}
+img{display:block;max-width:100%}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 var(--page-margin)}
+
+.text-micro{font-size:var(--fs-micro);line-height:var(--lh-micro);font-weight:var(--fw-micro);letter-spacing:var(--ls-micro);text-transform:uppercase}
+.text-mono{font-family:var(--font-mono)}
+.ink-dim{color:var(--ink-dim)}
+.ink-muted{color:var(--ink-muted)}
+.accent{color:var(--accent)}
+
+/* Topbar */
+.topbar{height:var(--topbar-h);display:flex;align-items:center;background:var(--bg);position:sticky;top:0;z-index:20;border-bottom:1px solid var(--rule)}
+.topbar__inner{width:100%;display:flex;align-items:center;justify-content:space-between}
+.topbar__brand{display:inline-flex;align-items:center;gap:var(--sp-2)}
+.topbar__logo-mark{width:12px;height:12px;background:var(--ink)}
+.topbar__logo-text{font-size:var(--fs-small);font-weight:600;letter-spacing:var(--ls-title)}
+.topbar__nav{display:inline-flex;gap:var(--sp-5);font-size:var(--fs-small);color:var(--ink-dim)}
+.topbar__nav a:hover{color:var(--ink)}
+.topbar__hamburger{display:none;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer;background:transparent;border:0}
+.topbar__hamburger span{display:block;width:16px;height:1.5px;background:var(--ink)}
+.topbar__mobile-menu{display:none;position:absolute;top:var(--topbar-h);left:0;right:0;background:var(--bg);border-bottom:1px solid var(--rule);padding:var(--sp-3) var(--page-margin);z-index:19}
+.topbar__mobile-menu a{display:block;padding:var(--sp-2) 0;border-bottom:1px solid var(--rule)}
+.topbar__mobile-menu a:last-child{border-bottom:0}
+
+/* Hero */
+.hero{padding:var(--sp-14) 0 var(--sp-10);border-bottom:1px solid var(--rule)}
+.hero__inner{display:grid;grid-template-columns:1.6fr 1fr;gap:var(--sp-10);align-items:start}
+.hero__kicker{margin-bottom:var(--sp-4)}
+.hero__title{font-size:var(--fs-display);line-height:var(--lh-display);font-weight:var(--fw-display);letter-spacing:var(--ls-tight)}
+.hero__sub{font-size:var(--fs-body);line-height:var(--lh-body);margin-top:var(--sp-5);max-width:480px}
+.hero__cta{display:flex;gap:var(--sp-3);margin-top:var(--sp-6)}
+
+.btn{display:inline-flex;align-items:center;padding:var(--sp-3) var(--sp-5);font-size:var(--fs-small);font-weight:500;border:1px solid var(--ink);transition:all var(--tx);cursor:pointer}
+.btn--solid{background:var(--ink);color:var(--bg)}
+.btn--solid:hover{background:#000}
+.btn--outline{background:transparent;color:var(--ink)}
+.btn--outline:hover{background:var(--ink);color:var(--bg)}
+
+.metrics{color:var(--ink-dim);font-size:var(--fs-micro);line-height:1.8}
+.metrics__row{display:flex;justify-content:space-between;padding:var(--sp-2) 0;border-bottom:1px solid var(--rule)}
+.metrics__row:last-child{border-bottom:0}
+.metrics dt{color:var(--ink-muted)}
+.metrics dd{margin:0;color:var(--ink);font-size:var(--fs-small);font-weight:600}
+
+/* Section with indicator */
+.section{padding:var(--sp-10) 0;position:relative}
+.section__indicator{position:absolute;left:-24px;top:0;width:4px;height:100%;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform 0.5s cubic-bezier(0.25,0.1,0.25,1);opacity:0}
+.section__indicator.active{transform:scaleY(1);opacity:1}
+.section__header{margin-bottom:var(--sp-8)}
+.section__kicker{font-family:var(--font-mono);font-size:var(--fs-mono);color:var(--ink-muted);letter-spacing:var(--ls-micro);text-transform:uppercase;margin-bottom:var(--sp-1)}
+.section__title{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:var(--fw-h1);letter-spacing:var(--ls-title)}
+.section__rule{width:32px;height:2px;background:var(--accent);margin-top:var(--sp-2)}
+.section__desc{font-size:var(--fs-small);line-height:var(--lh-small);color:var(--ink-dim);margin-top:var(--sp-3);max-width:560px}
+
+/* Tool Card - compact */
+.tool-card{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-8);padding:var(--sp-8) 0;border-bottom:1px solid var(--rule)}
+.tool-card:last-child{border-bottom:0}
+.tool-card__info{display:flex;flex-direction:column}
+.tool-card__num{font-family:var(--font-mono);font-size:var(--fs-mono);color:var(--ink-muted);text-transform:uppercase;letter-spacing:var(--ls-micro);margin-bottom:var(--sp-1)}
+.tool-card__title{font-size:var(--fs-h2);line-height:var(--lh-h2);font-weight:var(--fw-h2);letter-spacing:var(--ls-title);margin-bottom:var(--sp-1)}
+.tool-card__subtitle{font-size:var(--fs-small);color:var(--ink-dim);margin-bottom:var(--sp-4)}
+.tool-card__desc{font-size:var(--fs-small);line-height:var(--lh-small);color:var(--ink-dim);flex:1}
+
+/* Image grid - limited height */
+.img-grid{display:grid;gap:var(--sp-3)}
+.img-grid--2{grid-template-columns:1fr 1fr}
+.img-grid--1{grid-template-columns:1fr}
+.img-grid img{width:100%;height:240px;object-fit:cover;border:1px solid var(--rule);cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;loading:lazy}
+.img-grid img:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+
+/* Download */
+.download-group{display:flex;gap:var(--sp-3);margin-top:var(--sp-4);flex-wrap:wrap}
+.download-btn{display:inline-flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-5);background:var(--ink);color:white;font-size:var(--fs-small);font-weight:500;text-decoration:none;transition:all 0.25s;border:1px solid var(--ink);cursor:pointer}
+.download-btn:hover{background:var(--accent);border-color:var(--accent)}
+.download-btn__icon{font-size:16px}
+.download-btn__info{display:flex;flex-direction:column}
+.download-btn__label{font-size:var(--fs-micro);letter-spacing:var(--ls-micro);text-transform:uppercase;opacity:0.7}
+.download-btn__name{font-size:var(--fs-small)}
+
+.info-box{padding:var(--sp-3) var(--sp-4);background:var(--card);border-left:3px solid var(--accent);margin-top:var(--sp-4);font-size:var(--fs-small);line-height:var(--lh-small);color:var(--ink-dim)}
+
+.tool-link{display:inline-flex;align-items:center;gap:var(--sp-2);padding:var(--sp-3) var(--sp-5);background:var(--ink);color:white;font-size:var(--fs-small);font-weight:500;margin-top:var(--sp-4);border:1px solid var(--ink);transition:all 0.25s;cursor:pointer;width:fit-content}
+.tool-link:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 16px rgba(214,69,0,0.2)}
+
+/* Checklist */
+.checklist-section{background:var(--ink);color:var(--bg);padding:var(--sp-10) 0}
+.checklist__title{font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:var(--fw-h1);letter-spacing:var(--ls-title);margin-bottom:var(--sp-6)}
+.checklist__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3)}
+.checklist__item{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-3) var(--sp-4);background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);font-size:var(--fs-small);transition:all var(--tx)}
+.checklist__item:hover{background:rgba(255,255,255,0.12)}
+.checklist__item::before{content:"☐";font-size:16px;color:var(--accent);flex-shrink:0}
+
+.notice{padding:var(--sp-4) var(--sp-5);background:var(--card);border:1px solid var(--rule);margin-bottom:var(--sp-8);font-size:var(--fs-small);line-height:var(--lh-small)}
+.notice strong{color:var(--accent)}
+
+.footer{padding:var(--sp-6) 0;border-top:1px solid var(--rule);font-size:var(--fs-small);color:var(--ink-muted)}
+.footer__inner{display:flex;justify-content:space-between;align-items:baseline}
+
+/* Lightbox */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.4s cubic-bezier(0.4,0,0.2,1),visibility 0.4s}
+.lightbox.active{opacity:1;visibility:visible}
+.lightbox__overlay{position:absolute;inset:0;background:rgba(17,17,17,0.92);backdrop-filter:blur(20px)}
+.lightbox__content{position:relative;z-index:1;max-width:90vw;max-height:90vh;transform:scale(0.9);transition:transform 0.4s cubic-bezier(0.4,0,0.2,1)}
+.lightbox.active .lightbox__content{transform:scale(1)}
+.lightbox__content img{max-width:100%;max-height:90vh;object-fit:contain}
+.lightbox__close{position:absolute;top:var(--sp-4);right:var(--sp-4);z-index:2;width:40px;height:40px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--tx)}
+.lightbox__close:hover{background:rgba(255,255,255,0.2)}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero__inner{grid-template-columns:1fr;gap:var(--sp-6)}
+  .hero__title{font-size:var(--fs-h1)}
+  .tool-card{grid-template-columns:1fr;gap:var(--sp-5)}
+  .img-grid img{height:200px}
+  .checklist__grid{grid-template-columns:1fr}
+  .topbar__nav{display:none}
+  .topbar__hamburger{display:flex}
+}
+@media(max-width:480px){
+  :root{--page-margin:16px}
+  .hero{padding:var(--sp-8) 0 var(--sp-6)}
+  .hero__title{font-size:var(--fs-h2)}
+  .section{padding:var(--sp-8) 0}
+  .section__title{font-size:var(--fs-h2)}
+  .tool-card{padding:var(--sp-5) 0}
+  .img-grid img{height:160px}
+  .download-group{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a href="#" class="topbar__brand">
+      <span class="topbar__logo-mark"></span>
+      <span class="topbar__logo-text">三和SANHE · 课前准备</span>
+    </a>
+    <nav class="topbar__nav">
+      <a href="#computer">电脑</a>
+      <a href="#network">网络</a>
+      <a href="#ccswitch">CC Switch</a>
+      <a href="#obsidian">Obsidian</a>
+      <a href="#voice">语音</a>
+      <a href="#claude">Claude Code</a>
+      <a href="#checklist">清单</a>
+    </nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden>
+    <a href="#computer">电脑</a>
+    <a href="#network">网络</a>
+    <a href="#ccswitch">CC Switch</a>
+    <a href="#obsidian">Obsidian</a>
+    <a href="#voice">语音</a>
+    <a href="#claude">Claude Code</a>
+    <a href="#checklist">清单</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div>
+      <div class="text-micro accent hero__kicker">三和SANHE · 一人公司自媒体商业课</div>
+      <h1 class="hero__title">课前<span class="accent">准备事项</span></h1>
+      <p class="hero__sub ink-dim">本次课程涉及大量AI工具，为保证到场后顺利进入实操，请提前完成设备、软件及网络环境准备。</p>
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#computer">开始准备 →</a>
+        <a class="btn btn--outline" href="#checklist">自检清单</a>
+      </div>
+    </div>
+    <aside>
+      <dl class="metrics">
+        <div class="metrics__row"><dt>准备项目</dt><dd>6</dd></div>
+        <div class="metrics__row"><dt>核心工具</dt><dd>4</dd></div>
+        <div class="metrics__row"><dt>系统支持</dt><dd>Win + Mac</dd></div>
+        <div class="metrics__row"><dt>建议耗时</dt><dd>30 分钟</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<div class="container" style="padding-top:var(--sp-8)">
+  <div class="notice"><strong>本次课程与往期有明显不同</strong>，请每位同学务必认真阅读并完成课前准备。</div>
+</div>
+
+<!-- 1. Computer -->
+<section class="section" id="computer">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">01 · 电脑设备</div>
+      <h2 class="section__title">电脑及基础设备</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">课程涉及大量现场AI实操，采用「教学和实操」同步进行，务必带上PC电脑。</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">设备要求</div>
+        <div class="tool-card__title">Windows 和 macOS 均可</div>
+        <div class="tool-card__subtitle">优先建议 Mac 系统笔记本</div>
+        <div class="tool-card__desc">
+          <p>AI底层开发大部分针对 mac 优化，windows 出问题概率相对多一些。建议使用近几年购买、运行状态良好的电脑。</p>
+          <p style="margin-top:var(--sp-3)">不建议仅携带手机或平板，部分实操需要完整电脑环境。</p>
+        </div>
+        <div class="info-box">请确保电量充足，建议携带充电器。</div>
+      </div>
+      <div class="img-grid img-grid--2">
+        <img src="img1.png" alt="电脑设备" class="lightbox-trigger" loading="lazy">
+        <img src="img2.png" alt="电脑设备" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Network -->
+<section class="section" id="network" style="background:var(--card)">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">02 · 网络工具</div>
+      <h2 class="section__title">科学上网工具</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">课程需要访问国外AI服务，已有工具的同学可跳过。</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">推荐方案</div>
+        <div class="tool-card__title">快柠檬</div>
+        <div class="tool-card__subtitle">自行下载并开通</div>
+        <div class="tool-card__desc">课程中需要使用 Claude、ChatGPT 等国外AI服务，需要科学上网工具才能正常访问。</div>
+        <a class="tool-link" href="https://swiftlem.shop" target="_blank">前往官网下载并开通</a>
+      </div>
+      <div class="img-grid img-grid--2">
+        <img src="img3.png" alt="快柠檬" class="lightbox-trigger" loading="lazy">
+        <img src="img4.png" alt="快柠檬" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. CC Switch -->
+<section class="section" id="ccswitch">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">03 · API工具</div>
+      <h2 class="section__title">CC Switch</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">快速配置大模型API和一键切换的工具，课程必备。</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">必备工具</div>
+        <div class="tool-card__title">CC Switch</div>
+        <div class="tool-card__subtitle">配置大模型API，一键切换</div>
+        <div class="tool-card__desc">课程中会用它配置 Claude Code 的 API 密钥。下载后双击安装，能打开就行。</div>
+        <div class="download-group">
+          <a class="download-btn" href="CC-Switch-macOS.dmg" download>
+            <span class="download-btn__icon">🍎</span>
+            <span class="download-btn__info">
+              <span class="download-btn__label">macOS</span>
+              <span class="download-btn__name">CC-Switch-v3.16.2.dmg</span>
+            </span>
+          </a>
+          <a class="download-btn" href="CC-Switch-Windows.msi" download>
+            <span class="download-btn__icon">🪟</span>
+            <span class="download-btn__info">
+              <span class="download-btn__label">Windows</span>
+              <span class="download-btn__name">CC-Switch-v3.16.2.msi</span>
+            </span>
+          </a>
+        </div>
+        <div class="info-box">dmg 是 Mac 的，msi 是 Windows 的。</div>
+      </div>
+      <div class="img-grid img-grid--1">
+        <img src="img5.png" alt="CC Switch" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Obsidian -->
+<section class="section" id="obsidian" style="background:var(--card)">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">04 · 知识库</div>
+      <h2 class="section__title">Obsidian</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">本地管理 Markdown 文件的工具，课程中用来整理知识库。</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">知识管理</div>
+        <div class="tool-card__title">Obsidian</div>
+        <div class="tool-card__subtitle">支持双向链接、知识图谱</div>
+        <div class="tool-card__desc">Claude Code 的重要搭档，课程中用它整理和管理你的业务资料、方法论和内容资产。</div>
+        <a class="tool-link" href="https://obsidian.md/" target="_blank">前往官网下载 Obsidian</a>
+      </div>
+      <div class="img-grid img-grid--2">
+        <img src="img6.png" alt="Obsidian" class="lightbox-trigger" loading="lazy">
+        <img src="img7.png" alt="Obsidian" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Voice -->
+<section class="section" id="voice">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">05 · 效率工具</div>
+      <h2 class="section__title">语音输入工具</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">用「说」代替「打字」，大幅提升与AI交互效率。</p>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">方案一</div>
+        <div class="tool-card__title">微信输入法</div>
+        <div class="tool-card__subtitle">最简单，能用</div>
+        <div class="tool-card__desc">安装后在设置中开启语音输入即可。适合怕麻烦的同学。</div>
+        <a class="tool-link" href="https://z.weixin.qq.com/" target="_blank">前往官网下载微信输入法</a>
+      </div>
+      <div class="img-grid img-grid--1">
+        <img src="img8.png" alt="微信输入法" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">方案二</div>
+        <div class="tool-card__title">闪电说</div>
+        <div class="tool-card__subtitle">效果更好，可自定义</div>
+        <div class="tool-card__desc">接入豆包语音识别模型（免费），准确率高，支持个性化偏好。适合对质量有要求的同学。</div>
+        <a class="tool-link" href="https://shandianshuo.cn/" target="_blank">前往官网下载闪电说</a>
+      </div>
+      <div class="img-grid img-grid--2">
+        <img src="img9.png" alt="闪电说" class="lightbox-trigger" loading="lazy">
+        <img src="img10.png" alt="闪电说" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Claude Code -->
+<section class="section" id="claude" style="background:var(--card)">
+  <div class="section__indicator"></div>
+  <div class="container">
+    <div class="section__header">
+      <div class="section__kicker">06 · 核心工具</div>
+      <h2 class="section__title">Claude Code</h2>
+      <div class="section__rule"></div>
+      <p class="section__desc">本次课程的超级核心工具。</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-card__info">
+        <div class="tool-card__num">核心工具</div>
+        <div class="tool-card__title">VS Code + Claude Code</div>
+        <div class="tool-card__subtitle">先装 VS Code，再装 Claude Code 插件</div>
+        <div class="tool-card__desc">Claude Code 能进入你的项目，读取文件、理解上下文、完成任务。安装步骤：VS Code 左侧菜单第五个图标，搜索「Claude Code」，选第一个带 ✅ 的安装。</div>
+        <a class="tool-link" href="https://code.visualstudio.com/" target="_blank">前往官网下载 VS Code</a>
+      </div>
+      <div class="img-grid img-grid--2">
+        <img src="img12.png" alt="VS Code" class="lightbox-trigger" loading="lazy">
+        <img src="img13.png" alt="Claude Code" class="lightbox-trigger" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Checklist -->
+<section class="checklist-section" id="checklist">
+  <div class="container">
+    <h2 class="checklist__title">课前准备 · 自检清单</h2>
+    <div class="checklist__grid">
+      <div class="checklist__item">电脑PC设备</div>
+      <div class="checklist__item">科学上网工具（课前开通）</div>
+      <div class="checklist__item">CC Switch（安装好）</div>
+      <div class="checklist__item">Obsidian（安装好）</div>
+      <div class="checklist__item">语音输入工具</div>
+      <div class="checklist__item">VS Code + Claude Code 插件</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>三和SANHE · 一人公司自媒体商业课</span>
+    <span class="text-mono">v2026</span>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox__overlay" id="lightbox-overlay"></div>
+  <button class="lightbox__close" id="lightbox-close">×</button>
+  <div class="lightbox__content">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+</div>
+
+<script>
+// Hamburger
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobile-menu');
+hamburger.addEventListener('click',function(){
+  mobileMenu.hidden=!mobileMenu.hidden;
+});
+mobileMenu.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{mobileMenu.hidden=true;});
+});
+
+// Lightbox
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+document.querySelectorAll('.lightbox-trigger').forEach(img=>{
+  img.addEventListener('click',function(){
+    lightboxImg.src=this.src;
+    lightboxImg.alt=this.alt;
+    lightbox.classList.add('active');
+    document.body.style.overflow='hidden';
+  });
+});
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  document.body.style.overflow='';
+}
+document.getElementById('lightbox-close').addEventListener('click',closeLightbox);
+document.getElementById('lightbox-overlay').addEventListener('click',closeLightbox);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+
+// Scroll Indicator
+const sections=document.querySelectorAll('.section[id]');
+const indicators=document.querySelectorAll('.section__indicator');
+let currentSection=null;
+let ticking=false;
+
+function updateIndicator(){
+  const viewportCenter=window.innerHeight/2;
+  let closestIndex=-1;
+  let closestDistance=Infinity;
+  
+  sections.forEach((section,index)=>{
+    const rect=section.getBoundingClientRect();
+    const sectionCenter=rect.top+rect.height/2;
+    const distance=Math.abs(sectionCenter-viewportCenter);
+    
+    if(distance<closestDistance&&rect.top<window.innerHeight&&rect.bottom>0){
+      closestDistance=distance;
+      closestIndex=index;
+    }
+  });
+  
+  indicators.forEach((indicator,index)=>{
+    if(index===closestIndex){
+      indicator.classList.add('active');
+    }else{
+      indicator.classList.remove('active');
+    }
+  });
+  
+  ticking=false;
+}
+
+window.addEventListener('scroll',function(){
+  if(!ticking){
+    requestAnimationFrame(updateIndicator);
+    ticking=true;
+  }
+},{passive:true});
+
+updateIndicator();
+</script>
+</body>
+</html>
