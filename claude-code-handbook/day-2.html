@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 2 · Claude Code 与项目制 Agent</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="三和线下课课后复习站首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">三和线下课课后复习站</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索课程、章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="day-1.html">Day 1</a>
+<a class="active" href="day-2.html">Day 2</a>
+<a class="" href="day-3.html">Day 3</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="day-1.html">Day 1</a>
+<a class="active" href="day-2.html">Day 2</a>
+<a class="" href="day-3.html">Day 3</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<section class="entry-hero rule-bottom">
+  <div class="container-home">
+    <div class="text-micro accent">Day 2</div>
+    <h1>Claude Code 与项目制 Agent</h1>
+    <p class="ink-dim">当前已完成的第二天课后复习模块。这里保留完整章节索引、学习路径、复盘场景和资料库入口。</p>
+  </div>
+</section>
+
+<main>
+  <section class="grid-sec container-home">
+    <div class="grid-sec__head"><div><div class="text-micro accent">Day 2 Index</div><h2>章节索引</h2></div><a class="text-mono accent" href="all.html">全部知识点 →</a></div>
+    <div class="index-list"><a class="index-row" href="opening.html" style="--disc-color:#7E22CE">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 01</span></div>
+  <div class="index-row__main"><h2>开场与学习路径</h2><p>先建立当天学习节奏，明确从造境、立规到解惑的课程结构。</p><ul><li>开场：这一天要把 AI 放进业务现场</li></ul></div>
+  <div class="index-row__count"><strong>1</strong><span>知识点</span></div>
+</a><a class="index-row" href="ai-evolution.html" style="--disc-color:#C2410C">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 02</span></div>
+  <div class="index-row__main"><h2>AI 应用方式的进化</h2><p>从 Chat、Prompt 到伪智能体，理解为什么单次对话会碰到边界。</p><ul><li>从 Chat 到 Agent：协作关系变深</li><li>Prompt Engineering</li><li>Minor Adjustments in the Prompt Stage</li></ul></div>
+  <div class="index-row__count"><strong>7</strong><span>知识点</span></div>
+</a><a class="index-row" href="agent-workstyle.html" style="--disc-color:#B45309">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 03</span></div>
+  <div class="index-row__main"><h2>从 Chat 到 Agent 工作方式</h2><p>把 AI 从聊天窗口推进到文件、终端和真实工作环境里。</p><ul><li>Agent</li><li>封装提示词的智能体</li><li>为什么大模型不能看和操作我电脑里的东西，而所谓的 Agent 就可以呢</li></ul></div>
+  <div class="index-row__count"><strong>6</strong><span>知识点</span></div>
+</a><a class="index-row" href="model-positioning.html" style="--disc-color:#7C2D12">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 04</span></div>
+  <div class="index-row__main"><h2>从模型命名理解能力与定位</h2><p>用产品命名、能力边界和使用场景理解模型选择。</p><ul><li>更好上手的 Agent</li><li>决赛圈</li><li>从 模型命名 来感受模型差异、能力与定位</li></ul></div>
+  <div class="index-row__count"><strong>4</strong><span>知识点</span></div>
+</a><a class="index-row" href="project-world.html" style="--disc-color:#166534">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 05</span></div>
+  <div class="index-row__main"><h2>Claude Code 与文件夹即世界</h2><p>建立项目制 Agent 的核心概念：文件夹、Markdown、项目结构和业务世界。</p><ul><li>文件夹即世界：知识库就是 AI 的办公室</li><li>把隐性经验写成 AI 能调用的文件</li><li>它冷静 它持久</li></ul></div>
+  <div class="index-row__count"><strong>10</strong><span>知识点</span></div>
+</a><a class="index-row" href="claude-md.html" style="--disc-color:#0E7490">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 06</span></div>
+  <div class="index-row__main"><h2>CLAUDE.md 与规则系统</h2><p>理解入口文件、规则、Source of Truth 和项目执行边界。</p><ul><li>CLAUDE.md：项目入口文件</li><li>不同项目的 CLAUDE.md 该写不同规则</li><li>全局规则和项目规则要分开</li></ul></div>
+  <div class="index-row__count"><strong>7</strong><span>知识点</span></div>
+</a><a class="index-row" href="hands-on-project.html" style="--disc-color:#1D4ED8">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 07</span></div>
+  <div class="index-row__main"><h2>动手搭建个人项目基础</h2><p>从业务流程出发，搭建个人 AI 项目的初始地基。</p><ul><li>SANHESkill：先把人的业务说清楚</li><li>资料清洗、放置和维护原则</li><li>邀请三位同学</li></ul></div>
+  <div class="index-row__count"><strong>3</strong><span>知识点</span></div>
+</a><a class="index-row" href="obsidian.html" style="--disc-color:#0F766E">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 08</span></div>
+  <div class="index-row__main"><h2>Obsidian 本地知识库</h2><p>把 Markdown 文件沉淀成可阅读、可关联、可被 Agent 使用的知识系统。</p><ul><li>Obsidian：打开本地 Markdown 世界</li><li>本地知识库和 Agent 的分工</li><li>YAML 和双链：给文件写封面和关系</li></ul></div>
+  <div class="index-row__count"><strong>4</strong><span>知识点</span></div>
+</a><a class="index-row" href="three-way-link.html" style="--disc-color:#475569">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 09</span></div>
+  <div class="index-row__main"><h2>Claude Code × Obsidian × 飞书</h2><p>明确三种工具的分工，把本地知识、Agent 执行和团队交付接起来。</p><ul><li>x</li><li>飞书 CLI</li></ul></div>
+  <div class="index-row__count"><strong>2</strong><span>知识点</span></div>
+</a><a class="index-row" href="summary.html" style="--disc-color:#9333EA">
+  <div class="index-row__meta"><span class="disc-dot"></span><span class="text-mono ink-muted">CH 10</span></div>
+  <div class="index-row__main"><h2>总结、答疑与课后行动</h2><p>把当天成果带回真实业务，在使用中持续更新系统。</p><ul><li>今天带回去的是一个刚出生的系统</li><li>将内容与图片资料沉淀成可整理的笔记素材</li><li>那不接 Claude ，能接其他大模型吗？</li></ul></div>
+  <div class="index-row__count"><strong>3</strong><span>知识点</span></div>
+</a></div>
+  </section>
+  <section class="grid-sec container-home">
+    <div class="grid-sec__head"><div><div class="text-micro accent">Day 2 Tools</div><h2>复习入口</h2></div></div>
+    <div class="day-tool-grid">
+      <a class="resource-index-card" href="learning-path.html"><div class="resource-card__type"><span class="type-dot"></span>path</div><h2>学习路径</h2><p class="ink-dim">按课程主线从 AI 应用方式、项目世界、CLAUDE.md、Skill 到 Obsidian 复习。</p></a>
+      <a class="resource-index-card" href="scenarios.html"><div class="resource-card__type"><span class="type-dot"></span>scenario</div><h2>复盘场景</h2><p class="ink-dim">按课后真实任务进入：理解 Agent、建立项目、写规则、使用 Skill。</p></a>
+      <a class="resource-index-card" href="resources.html"><div class="resource-card__type"><span class="type-dot"></span>resources</div><h2>资料库</h2><p class="ink-dim">集中查找提示词、Skill、YAML、Markdown 样例和操作流程。</p></a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · 线下课课后复习站</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Day 2、Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
