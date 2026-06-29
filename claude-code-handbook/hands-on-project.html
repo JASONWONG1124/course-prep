@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>动手搭建个人项目基础 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="active" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#1D4ED8">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>动手搭建个人项目基础</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">3 知识点</span><span class="text-mono ink-muted">5 材料</span><span class="text-mono ink-muted">5 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#1D4ED8">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ 动手搭建个人项目基础</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-130-133"><span class="toc-index">01</span><span>SANHESkill：先把人的业务说清楚</span></a></li><li><a href="#group-134-137"><span class="toc-index">02</span><span>资料清洗、放置和维护原则</span></a></li><li><a href="#group-138-139"><span class="toc-index">03</span><span>邀请三位同学</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class="is-active"><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Hands-on Project · CH 07</div><h1 class="detail__title">动手搭建个人项目基础</h1><p class="detail__lede-body">从业务流程出发，搭建个人 AI 项目的初始地基。</p>
+<article class="knowledge-entry page-group-card" id="group-130-133">
+  <span class="page-anchor" id="slide-130"></span><span class="page-anchor" id="slide-131"></span><span class="page-anchor" id="slide-132"></span><span class="page-anchor" id="slide-133"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>SANHESkill：先把人的业务说清楚</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页进入实操：搭文件夹之前先理清业务，world-mapper 负责把业务、人设和资产写成自我画像，world-builder 再把它翻译成项目结构。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>课程提供的 SANHESkill 用于把业务、人设、资产和项目结构整理成 Agent 可以长期调用的材料。这里先理解它们在项目搭建链路中的位置，具体原理可以放到后续章节展开。</p>
+<p>其中</p>
+<p>其中 World-mapper 这个 skill，就是给学员产出一份完整的「业务 + 人设 + 资产」自我画像。 自我画像不是问卷结果，不是标签集合，它是一份让下一个 Claude Code 读完后能「10 秒之内成为你」的文件，同时也是自己看完会觉得「被精准描述」的镜子</p>
+<p>它是让 AI 成为你的关键</p>
+<p>world-builder 读取自我画像后，会继续追问 3-5 个和系统用途有关的问题，用来确认 AI 需要进入哪些工作流、管理到什么粒度，以及哪些任务应该优先进入项目。</p>
+<p>你希望 AI 帮你做哪几件具体的事？哪些工作流要进系统？数据想管到什么粒度？</p>
+<p>架构不是一次成型的，是自己根据实际情况来做成自己最舒服，最贴合的状态</p>
+<p>前两步做完了，你有了一个空的文件夹架构。 这一步要做的事情只有一件：把你现有的所有业务资料，按照文件夹架构的分类，全部放进对应的位置。</p>
+<p>但在放之前，有一个动作不能跳过——资料清洗。</p>
+<p>你现在手里的资料，可能散落在各种地方，各种格式。 微信聊天记录、Word 文档、PDF、截图、Excel 表格、语音备忘录、随手记的便利贴——这些东西格式混乱，AI 读起来效率低，理解质量差。 放进去之前，必须先统一格式。</p>
+<p>资料清洗不需要一次做完</p>
+<p>你现在有什么就先放什么，哪怕只有三份文件，也比空文件夹强。 知识库是生长的，不是一次性建好的。先把现有的整理好放进去，往后每产出一份新内容、每沉淀一个新判断，就同步更新进来。 文件夹跟着你的业务一起长，它永远不会有「完成」的那一天。</p></div></section>
+      
+<section class="resource-section" id="group-130-133-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--skill" data-kind="skill">
+  <div class="resource-card__type"><span class="type-dot"></span>skill</div>
+  <h3>SANHESkill 四件套 / 六件套：不是模板，是把人的世界搭出来</h3>
+  <p>课堂实操的重点不是让大家记住几个 skill 名字，而是理解它们的顺序：先把人看清楚，再搭项目骨架，再把资料放进去，最后给文件之间织网。world-anchor 和 world-depth 是延伸的认知工具，用来处理定位和目标拆解。</p><div class="skill-grid"><article class="skill-card">
+  <h4>world-mapper</h4>
+  <p>先把人看清楚，把业务、人设、资产整理成 AI 能读懂的自我画像。</p>
+  <dl>
+    <div><dt>产物</dt><dd>自我画像.md</dd></div>
+    <div><dt>什么时候用</dt><dd>刚开始搭系统，或者你还说不清自己是谁、服务谁、有什么资产时。</dd></div>
+    <div><dt>前置条件</dt><dd>不需要前置文件，只需要真实回答业务、经历、内容和偏好。</dd></div>
+  </dl>
+</article><article class="skill-card">
+  <h4>world-builder</h4>
+  <p>把自我画像翻译成项目地基，让文件夹结构、CLAUDE.md 和资料入口长得像你的业务。</p>
+  <dl>
+    <div><dt>产物</dt><dd>CLAUDE.md + SOURCE_OF_TRUTH.md + 人设锚点/ + 业务地图 + 文件夹架构</dd></div>
+    <div><dt>什么时候用</dt><dd>已经有自我画像，准备搭一个 Claude Code 能长期进入的项目系统时。</dd></div>
+    <div><dt>前置条件</dt><dd>项目内必须先有 world-mapper 产出的 自我画像.md。</dd></div>
+  </dl>
+</article><article class="skill-card">
+  <h4>world-weaver</h4>
+  <p>给 Markdown 文件写入 YAML frontmatter，并用 Obsidian 双链织出语义关联网络。</p>
+  <dl>
+    <div><dt>产物</dt><dd>每个文件头部的 YAML + 文末的 ## 关联</dd></div>
+    <div><dt>什么时候用</dt><dd>项目里已经有一批 Markdown 文件，但它们还是散落文件堆、彼此没有关系时。</dd></div>
+    <div><dt>前置条件</dt><dd>建议先完成 world-builder，至少要有 CLAUDE.md 和稳定项目结构。</dd></div>
+  </dl>
+</article><article class="skill-card">
+  <h4>world-skill</h4>
+  <p>读取已有系统，判断哪些工作流值得未来沉淀成专属 Skill。</p>
+  <dl>
+    <div><dt>产物</dt><dd>5-10 个可 skill 化的能力增强方案</dd></div>
+    <div><dt>什么时候用</dt><dd>系统已经搭好，但你不知道接下来怎样让它真正干活时。</dd></div>
+    <div><dt>前置条件</dt><dd>优先读取 自我画像.md、CLAUDE.md、SOURCE_OF_TRUTH.md、业务地图和双链网络。</dd></div>
+  </dl>
+</article><article class="skill-card">
+  <h4>world-anchor</h4>
+  <p>从内容和经历里挖出心智锚点，命名你在消费者脑子里的位置。</p>
+  <dl>
+    <div><dt>产物</dt><dd>心智锚点.md</dd></div>
+    <div><dt>什么时候用</dt><dd>你不知道账号定位是什么，或者做了很多内容但说不清自己是谁时。</dd></div>
+    <div><dt>前置条件</dt><dd>最好提供 3-10 条能代表你的内容、文章、朋友圈或真实案例。</dd></div>
+  </dl>
+</article><article class="skill-card">
+  <h4>world-depth</h4>
+  <p>把扁平目标展开成立体细节结构图，看见决定成败的层级、隐性门槛和反直觉关系。</p>
+  <dl>
+    <div><dt>产物</dt><dd>目标地图.md</dd></div>
+    <div><dt>什么时候用</dt><dd>目标很大、很虚、很容易被一句口号带过，需要拆到可执行层级时。</dd></div>
+    <div><dt>前置条件</dt><dd>提供一个真实目标，以及当前已经知道的限制、资源和卡点。</dd></div>
+  </dl>
+</article></div>
+</section>
+
+
+<section class="resource-card resource-card--sample" data-kind="sample">
+  <div class="resource-card__type"><span class="type-dot"></span>sample</div>
+  <h3>world-mapper 产物长什么样</h3>
+  <p>跑完第一步，桌面项目里至少应该出现一份 `自我画像.md`。这份文件不是标签集合，而是后续所有项目结构和规则的根。</p><pre class="prompt-block"><code># 自我画像
+
+## 业务层
+- 我做什么业务
+- 服务谁
+- 靠什么交付价值
+- 现在卡在哪里
+
+## 人设层
+- 我相信什么
+- 我不相信什么
+- 我说话的方式
+- 我绝对不会做的事
+- 我的原话引用
+
+## 资产层
+- 已有内容
+- 已有案例
+- 已有方法论
+- 数据和复盘习惯
+- 可被 AI 调用的材料</code></pre>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-130-133-resources"><span>skill</span>SANHESkill 四件套 / 六件套：不是模板，是把人的世界搭出来</a>
+<a class="resource-panel__item" href="#group-130-133-resources"><span>sample</span>world-mapper 产物长什么样</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-130.png" alt="SANHESkill：先把人的业务说清楚 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-131.png" alt="SANHESkill：先把人的业务说清楚 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-132.png" alt="SANHESkill：先把人的业务说清楚 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-134-137">
+  <span class="page-anchor" id="slide-134"></span><span class="page-anchor" id="slide-135"></span><span class="page-anchor" id="slide-136"></span><span class="page-anchor" id="slide-137"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>资料清洗、放置和维护原则</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页讲资料进入系统之后怎么处理：先清洗成 AI 友好的格式，再让 Agent 按架构放置，后续维护坚持人判断、AI 执行。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>第一种：手动放 就是你自己判断每份资料属于哪个文件夹，自己一个个拖进去。</p>
+<p>这个方式可以用，但不太建议。 原因很简单——你的文件可能有几十份甚至上百份，一个个判断、一个个移动，费时费力。更重要的是，人在做这种重复性工作的时候很容易放错位置，或者遇到一份资料不知道该放哪里就随手扔进去，久了文件夹就乱了。 不要用你最宝贵的时间做最低价值的事情</p>
+<p>第二种：用 Agent 来放 把所有清洗好的资料扔进一个临时文件夹或者我们已经建好的那个文件夹，然后打开 Claude Code，告诉它： ▎ 「这个文件夹里有我所有整理好的资料，请你读取每一份文件的内容，根据我的项目架构，判断它应该放在哪个位置，然后帮我自动分类放置好。」</p>
+<p>它会自己读每一份文件，理解内容，对照你的项目架构，把每份资料放进最合适的文件夹。 放完之后它会给你一份报告——哪些文件放了哪里，哪些文件它不确定归属、需要你来判断。</p>
+<p>这个方式好在哪里？</p>
+<p>第一，它比你更仔细。它不会累，不会随手乱放，每份文件它都认真读过再判断。</p>
+<p>第二，它不确定的会告诉你。遇到一份文件确实跨类别、难以归属，它不会乱猜，它会列出来问你，最终决策权还在你手里。</p>
+<p>第三，它顺手帮你发现问题。在读资料的过程中，它可能会告诉你：「你有几份文件内容重复，建议合并」，或者「你的数据文件格式不统一，建议统一一下」。 这些是你自己手动放的时候不会发现的东西。</p>
+<p>例如，拿个案例，很多零散的文件，已经分类好了，还要有一个」</p>
+<p>你的灵魂 你的骨架 资料填入</p>
+<p>知识库的维护：人看，AI 动 文件夹搭好了，资料放进去了。 接下来有一个很多人没想清楚的问题——这个知识库以后应该怎么维护？谁来维护？ 答案很反直觉：人不应该直接碰这个文件夹，甚至不应该增删改，你只有查看的权利</p>
+<p>为什么？ 所有文件不是孤立的，删掉文件后，索引里可能还保留说明；下次 Agent 按索引找，就会出现「目录说有，架上没有」</p>
+<p>你自己动了，Agent 是不知道的，那索引里面还有，久而久之，整个对应关系就会乱，整个知识库就会开始腐烂了，哪哪都不对了</p>
+<p>创建、删除、决定文件放哪里不应该由人做。因为文件夹复杂以后，人根本不知道新文件应该放在哪，甚至不知道是否需要新建分类。 文件由 Agent 管理，由 Agent 编辑，由 Agent 维护；自己只和 Agent 沟通</p>
+<p>这是大多数人知识库最终的结局——起了个头，没有坚持下去</p>
+<p>一旦知识库进入上千、上万文件规模，文件就不再是一个个独立文档，而变成一张关系网。</p>
+<p>一个文件名变了，可能影响索引；一个文件删了，可能影响 Source of Truth；</p>
+<p>一个文件放错目录，Agent 以后就会按错误路径调用资料。人手动改，很容易只改眼前一个点，不会维护整张网</p>
+<p>人删文件，只会删文件；Agent 删文件，它还会很聪明的同时删索引，删掉对应的链接，完全抹掉 人创建文件，只会新建一个文档；Agent 创建文件，会把它放到合适位置，并给索引新增记录</p></div></section>
+      
+<section class="resource-section" id="group-134-137-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--workflow" data-kind="workflow">
+  <div class="resource-card__type"><span class="type-dot"></span>workflow</div>
+  <h3>操作路径：你的灵魂 → 你的骨架 → 资料填入 → 织网</h3>
+  <p>这张图必须保留，因为它就是学员回去跑 SANHESkill 的顺序。</p><ol class="workflow-steps"><li>你的灵魂：跑 world-mapper，通过深度对话产出 自我画像.md。</li><li>你的骨架：跑 world-builder，基于自我画像生成 CLAUDE.md、SOURCE_OF_TRUTH.md、人设锚点和项目结构。</li><li>资料填入：把过往作品、案例、复盘、客户资料、课程资料按项目结构放进去。</li><li>织网：当 Markdown 文件变多以后，跑 world-weaver，补 YAML frontmatter 和 Obsidian 双向链接。</li><li>装肌肉：系统有真实内容之后，跑 world-skill，判断哪些工作流值得未来做成专属 Skill。</li></ol>
+</section>
+
+
+<section class="resource-card resource-card--prompt" data-kind="prompt">
+  <div class="resource-card__type"><span class="type-dot"></span>prompt</div>
+  <h3>资料清洗与自动分类提示词</h3>
+  <p>这段要给学员留着。真正省时间的地方，是让 Agent 按项目结构移动和归类资料，人负责判断结果是否合理。</p><pre class="prompt-block"><code>这个文件夹里有我所有整理好的资料。
+
+请你读取每一份文件的内容，根据我的项目架构，判断它应该放在哪个位置，然后帮我自动分类放置好。
+
+处理要求：
+- 不要只根据文件名判断，要读内容。
+- 先给出分类方案，让我确认。
+- 确认后再移动文件。
+- 如果有文件无法判断归属，单独列出来，不要硬塞。
+- 移动完成后，更新 Source of Truth 或资料索引。
+- 原始资料不要删除，涉及覆盖、重命名或批量移动时先说明影响。</code></pre>
+</section>
+
+
+<section class="resource-card resource-card--workflow" data-kind="workflow">
+  <div class="resource-card__type"><span class="type-dot"></span>workflow</div>
+  <h3>维护原则：人看，AI 动</h3>
+  <p>文件夹搭好以后，最容易坏在维护上。人的角色不是每天手动拖文件、改文件名、删目录，而是查看现状、做判断、把变化告诉 Agent。真正的创建、移动、重命名、更新索引，应该让 Agent 执行。</p><ol class="workflow-steps"><li>人负责查看：随时打开文件夹，知道知识库现在长什么样。</li><li>人负责判断：告诉 Agent 新资料是什么、旧资料哪里变了、哪些内容需要更新。</li><li>AI 负责执行：写成什么格式、放在哪个文件夹、怎么命名、要不要更新索引，都交给 Agent 处理。</li><li>不要自己随手删改文件。一个文件名变了，可能影响 Source of Truth；一个文件放错目录，Agent 以后就会沿着错误路径调用资料。</li><li>维护的核心不是勤快，而是保持文件、索引、关系网络同步。</li></ol>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-134-137-resources"><span>workflow</span>操作路径：你的灵魂 → 你的骨架 → 资料填入 → 织网</a>
+<a class="resource-panel__item" href="#group-134-137-resources"><span>prompt</span>资料清洗与自动分类提示词</a>
+<a class="resource-panel__item" href="#group-134-137-resources"><span>workflow</span>维护原则：人看，AI 动</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-134.png" alt="资料清洗、放置和维护原则 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-137.png" alt="资料清洗、放置和维护原则 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-138-139">
+  <span class="page-anchor" id="slide-138"></span><span class="page-anchor" id="slide-139"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>邀请三位同学</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「动手搭建个人项目基础」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>业务地图和项目架构完成后，一个基础项目系统就已经出现。此时 Agent 已经拥有初始业务上下文，下一步要解决的是知识之间的关系网络。</p>
+<p>它们已经存在了，Agent 已经有你的业务上下文了，也知道 xxxxx，也知道 xxxxxx CLAUDE.md 里面，也清晰的说清楚了索引，告诉 AI 我有什么，你要去哪里找了 可是，这么庞大的知识，只属于弱链接维持 知识库还是一堆独立的文件，每个文件各自存在，各自表达自己的内容 这时候，Obsidian 出现了 Agent 会知道需要什么文件去哪里找，每个文件里有什么，但它不知道这些文件之间有什么关系</p>
+<p>刚才通过彻底梳理清楚了每个人自己的业务地图和专属项目架构搭建，一个基础的项目系统已经出现了 Agent 已经有了你的业务上下文，它知道你是谁，知道你在做什么赛道，知道你的表达风格，知道你的受众是谁。 CLAUDE.md 里也设计好了，索引也讲了，不过索引不太急，学员回头慢慢弄也行，索引就会告诉 AI 你有什么、要去哪里找</p>
+<p>你的「受众画像」和你的「选题方法论」之间，可能会有深度的逻辑关联。</p>
+<p>你的「数据规律」和你的「爆款文案」之间，可能也会有直接的因果关系。</p>
+<p>当你的世界观和你的每一条爆款文案之间有链接，AI 就能理解为什么这条文案跑得通——不只是知道它跑通了，而是理解背后的逻辑，然后复制这个逻辑到新的内容上。 这种知识和知识之间的网络，就是双链。 而让这个双链在你的知识库里真正建立起来的工具，就是接下来要讲的——Obsidian「转」</p>
+<p>在我们的整个课程里面，Agent 协作业务的整个链路是：Claude Code + Obsidian + 飞书</p>
+<p>Obsidian、Claude Code 和飞书不是三套独立系统，而是同一条工作链路中的三个职责位置</p>
+<p>前面我们已经用了很长的篇幅，讲清楚了 Agent 的所有东西，也详细地讲了关于 Claude Code 的文件夹和项目机制到底怎么用。</p>
+<p>课后需要继续完善文件夹结构、填充知识库，并把真实业务中的资料、案例和判断持续沉淀进去。</p>
+<p>接下来，为了解决刚才我讲的「知识链接」问题，我们就会用一个软件叫 Obsidian。</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>3</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>5</dd></div><div class="metrics__row"><dt>关键图</dt><dd>5</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-130-133"><div class="rel-card__name">SANHESkill：先把人的业务说清楚</div><div class="text-mono ink-muted">2 材料 · 3 图</div></a><a class="rel-card" href="#group-134-137"><div class="rel-card__name">资料清洗、放置和维护原则</div><div class="text-mono ink-muted">3 材料 · 2 图</div></a><a class="rel-card" href="#group-138-139"><div class="rel-card__name">邀请三位同学</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

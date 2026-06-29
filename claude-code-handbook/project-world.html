@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code 与文件夹即世界 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="active" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#166534">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>Claude Code 与文件夹即世界</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">10 知识点</span><span class="text-mono ink-muted">4 材料</span><span class="text-mono ink-muted">5 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#166534">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ Claude Code 与文件夹即世界</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-70-73"><span class="toc-index">01</span><span>文件夹即世界：知识库就是 AI 的办公室</span></a></li><li><a href="#group-74-77"><span class="toc-index">02</span><span>把隐性经验写成 AI 能调用的文件</span></a></li><li><a href="#group-78-78"><span class="toc-index">03</span><span>它冷静 它持久</span></a></li><li><a href="#group-79-82"><span class="toc-index">04</span><span>Markdown：同一段材料的两种阅读方式</span></a></li><li><a href="#group-83-86"><span class="toc-index">05</span><span>AI 读文字是在分配注意力</span></a></li><li><a href="#group-87-89"><span class="toc-index">06</span><span>知识库到底是给谁看的</span></a></li><li><a href="#group-90-93"><span class="toc-index">07</span><span>项目结构必须长得像你的业务</span></a></li><li><a href="#group-94-97"><span class="toc-index">08</span><span>自媒体代运营</span></a></li><li><a href="#group-98-101"><span class="toc-index">09</span><span>Claude Code 是 项目执行型 Agent</span></a></li><li><a href="#group-102-104"><span class="toc-index">10</span><span>身份层</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class="is-active"><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Project World · CH 05</div><h1 class="detail__title">Claude Code 与文件夹即世界</h1><p class="detail__lede-body">建立项目制 Agent 的核心概念：文件夹、Markdown、项目结构和业务世界。</p>
+<article class="knowledge-entry page-group-card" id="group-70-73">
+  <span class="page-anchor" id="slide-70"></span><span class="page-anchor" id="slide-71"></span><span class="page-anchor" id="slide-72"></span><span class="page-anchor" id="slide-73"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>文件夹即世界：知识库就是 AI 的办公室</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>你把你账号相关的所有东西放进这个文件夹——你的账号定位、你的内容风格、你验证过的选题、你的目标受众画像、你过去写过的爆款文案…… 然后你在这个文件夹里打开 Claude Code。 从这一刻开始，它能看到这个文件夹里的所有东西。它不需要你解释背景，因为背景都在文件里。它不需要你介绍你是谁，因为你的账号定位文档就在那里。它不需要你告诉它你的风格，因为你过去写的文案它都读过了。</p>
+<p>所以这个文件夹对它来说，不只是一个存文件的地方，它是你给它建造的一个世界——学员合作关系的全部基础，都在这里面</p>
+<p>文件夹，就是这个助手的办公室。你往里面放的每一份文件，都是在让他更了解你。 这就是项目制和对话制最本质的区别</p>
+<p>我们前面说过，真正让要用好 AI，我们一定不要过分依赖大模型的通用知识</p>
+<p>AI 干活的质量上限，从大模型的通用知识，变成了你自己积累的专属知识</p>
+<p>这个文件夹是你为 AI 建造的一个专属世界。它不只是存文件的地方，它是你和 AI 之间所有合作关系的底座，是你积累的所有经验的载体，是让 AI 从一个陌生人变成真正了解你的伙伴的那个容器。</p>
+<p>你把这个世界建得越好，学员合作的质量上限就越高</p>
+<p>我们说的知识库，第二大脑，本质上就是就是你电脑里的一个文件夹</p>
+<p>一点都不神秘。一个文件夹，里面放着你整理好的文件。就这样 在 Claude Code 中，打开我们的「知识库」文件夹，它就成为了这些资料的集合体 Agent</p>
+<p>这样的好处是什么：文件夹是固定的，就在那个位置，你每次都从这里出发 文件数量是可以无限增长的，那知识库同样也是无限增长</p>
+<p>你的大脑是有容量限制的。你学过的东西会忘，你想清楚的东西会模糊，你三年前的判断你可能已经记不清了。</p>
+<p>但文件夹没有这个限制。</p>
+<p>你每验证一个新选题，记录进去。你每发现一个平台规律，写进去。你每踩一个新坑，复盘进去。你每读到一个让你醍醐灌顶的观点，存进去。 这些东西在你的大脑里会衰减，在文件夹里永远不会。</p>
+<p>你的大脑在遗忘，你的文件夹在生长。 而且这两件事是同时发生的——你越用越忘，它越存越多。时间越长，文件夹和你大脑之间的差距越大，文件夹对你的价值就越高</p>
+<p>很多人以为知识库就是收藏夹——把好文章存进去。</p>
+<p>但真正有价值的知识库存的不是别人的文章，是你自己的判断。</p>
+<p>你验证过这个选题方向是跑得通的——记录进去。你发现某类开头在你的账号上完全不管用——记录进去。你和某类客户合作过，摸清楚了他们的决策习惯——记录进去。 这些判断，别人的知识库里没有，互联网上也查不到，大模型的训练数据里更不存在。</p>
+<p>它们只存在于你的文件夹里。</p>
+<p>所以当 Claude Code 从你的文件夹出发帮你工作，它用的不是烂的通用知识，是你独有的、经过真实验证的、别人无法复制的判断积累。</p>
+<p>Claude Code + 这个破文件夹，能干嘛，能做什么</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-070.png" alt="文件夹即世界：知识库就是 AI 的办公室 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-74-77">
+  <span class="page-anchor" id="slide-74"></span><span class="page-anchor" id="slide-75"></span><span class="page-anchor" id="slide-76"></span><span class="page-anchor" id="slide-77"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>把隐性经验写成 AI 能调用的文件</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>我们以前是怎么理解和消化知识的？</p>
+<p>我们知道什么选题能做、什么表达不适合、用户为什么购买，但这些经验只存在于脑中。</p>
+<p>但如果有人问你：你怎么知道的？</p>
+<p>你可能说不清楚 不是因为你不知道，是因为这些知识从来没有被你说出来过。它们是从一次次发视频、一次次看数据、一次次和用户互动里慢慢沉淀出来的。它们以一种模糊的、直觉的形式住在你的脑子里，在你需要做判断的时候自动浮现</p>
+<p>这就是隐性知识，你会骑自行车，但你没办法用语言把怎么保持平衡说清楚。</p>
+<p>你认识一个老朋友，你能在人群里一眼认出他，但你没办法把「他长什么样」精确描述给一个没见过他的人 这些知识是真实存在的，但它们存在的方式不是语言，是经验、是感知、是直觉</p>
+<p>它活在了大脑中，被我们的大脑单元来调用</p>
+<p>这是我们一直以来大脑处理信息的方式</p>
+<p>隐性知识的问题 隐性知识有三个致命的局限。</p>
+<p>第一，它会衰减。</p>
+<p>你现在记得很清楚的判断，一年后可能已经模糊了。人的隐性知识是会跟着记忆一起磨损。</p>
+<p>第二，它不能被传递。</p>
+<p>你的经验没办法直接复制给别人。你带一个新人，你只能言传身教，让他自己慢慢悟。 他需要走一遍你走过的路，才能形成类似的直觉。</p>
+<p>第三，它不能被 AI 调用。 这是最关键的。</p>
+<p>AI 能处理的只有它能读到的东西。你脑子里的判断，它看不见。</p>
+<p>你积累的经验，它不知道。</p>
+<p>你对自己账号风格的感知，它没有办法直接获取。</p>
+<p>第一类：个人经验与直觉</p>
+<p>你做账号积累下来的判断——什么选题能跑，什么表达不适合你的受众，用户为什么会买单。这些东西原本只活在你的大脑里，项目制把它们挖出来，写成文件，让 AI 能调用。</p>
+<p>第二类就是：现有业务资料</p>
+<p>你账号上真实跑出来的数据——发布过的文案、验证过的选题方向、爆款视频的数据表、用户反馈。这些是你用真实流量换来的东西，放进去之后 AI 给你的建议不是通用知识，是基于你这个账号的真实规律。</p>
+<p>第三类：外部有价值的知识与方法论</p>
+<p>你研究对标账号总结出来的内容规律。你读过的某本书里的框架。你看到的一篇让你醍醐灌顶的文章。某个你认可的创作者的方法论。 这类东西的特点是——它不是你自己的经验，但它经过你的筛选和判断，你认为它对你的业务有指导价值。 放进去之后，它就成了你知识库的一部分。AI 在帮你工作的时候，能把这些外部方法论和你自己的经验、数据结合起来，给你一个真正有深度的输出。</p>
+<p>以前我们的知识，是给自己看，自己调用的 消化得了，就消化，消化不了，就沉底，沉下网盘，沉下你封尘的文件夹</p>
+<p>当项目持续记录选题、内容、发布时间、播放数据、用户反馈与修改结论</p>
+<p>AI 可以逐步识别这个账号自己的内容规律</p>
+<p>不止是自媒体，而是可以延伸到任何的业务场景中</p>
+<p>如果你是开个宠物用品店的，学员觉得可以放什么 徐浩熙你是给政府和国企做内容的，你觉得可以放什么 小月亮你是做音乐知识付费赛道的，你觉得可以放什么 「下一页」</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-78-78">
+  <span class="page-anchor" id="slide-78"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>它冷静 它持久</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>随着时间积累，它会越来越了解你——你的风格、你的判断标准、你的业务逻辑、你踩过的坑和走过的弯路 这才是第二大脑真正的含义——不是一个存东西的地方，是一个和你一起进化的认知系统</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-79-82">
+  <span class="page-anchor" id="slide-79"></span><span class="page-anchor" id="slide-80"></span><span class="page-anchor" id="slide-81"></span><span class="page-anchor" id="slide-82"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Markdown：同一段材料的两种阅读方式</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页不是为了讲「内容吸引力」本身，而是用同一段内容演示 TXT 和 Markdown 的差别：没有结构时 AI 只能吞下一坨字，有结构时 AI 能看见标题、层级、例子和重点。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>可以观察到，存在文件夹里的所有文件的后缀名都是 md</p>
+<p>我们所有存的东西，都是给 AI 看的</p>
+<p>我们是给 AI 建设它所需要的所有东西 .md 是什么</p>
+<p>你平时存文件，会存 .doc、.pdf、.xlsx、txt 这些文件格式的背后，除了你看到的内容之外，还藏着大量的格式代码、字体信息、排版数据，人看没问题，但是对于 AI 来看，非常的杂乱，头都要炸了</p>
+<p>一个 .md 文件，里面只有字。没有隐藏的格式代码，没有字体信息，没有软件专属的数据结构。你看到什么，它就是什么</p>
+<p>txt 也行，看看这 txt，也没啥区别啊，为什么非要用 markdown 看这两个格式的文本</p>
+<p>可以观察哪个能生理性舒适，更愿意读哪一个</p>
+<p>TXT 这种格式，里面记录的真的是纯文本，没有任何格式可言。你所有的分段，都没用，都没有架构，都没有层级的 在 AI 的眼里，它就是一坨文字的「屎山」，里面没有结构，根本分不清楚重点</p>
+<p>而 Markdown 这种文本格式，自带了大量的结构语法 「演示」 Markdown 用极简的符号来表达结构：</p>
+<p># 这是一级标题 ## 这是二级标题 ### 这是三级标题</p>
+<p>这是正文段落</p>
+<p>这是列表项 - 这是另一个列表项</p>
+<p>**这是加粗**</p>
+<p>结构全部用符号显式表达出来，不依赖任何软件。</p></div></section>
+      
+<section class="resource-section" id="group-79-82-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--case" data-kind="case">
+  <div class="resource-card__type"><span class="type-dot"></span>case</div>
+  <h3>同一段材料：TXT 屎山 vs Markdown 权重地图</h3>
+  <p>这里的重点不是「内容吸引力」本身，而是借同一段材料观察两种文本形态的差别：没有结构时，AI 读到的是一整坨字；加上 Markdown 结构以后，标题、分支、例子和重点会变成 AI 能识别的权重地图。</p><div class="case-compare"><div class="case-compare__label">不结构化文字</div><div class="case-compare__text">所有分段、层级和重点都混在一起。AI 要自己猜哪里是标题、哪里是例子、哪里是结论，既浪费上下文，也容易抓错重点。</div><div class="case-compare__label">结构化 Markdown</div><div class="case-compare__text"># 是一级标题，## 是分支标题，- 是列表，**加粗** 是强调。结构本身就在告诉 AI：哪些内容更重要，哪些内容只是补充。</div><div class="case-compare__label">这一页的真正判断</div><div class="case-compare__text">我们存进去的每一个文件，都是在给 AI 建造它能高效读取、精准理解的信息环境。知识库不是只给人看的，而是给未来替你干活的 AI 看的。</div></div>
+</section>
+
+
+<section class="resource-card resource-card--sample" data-kind="sample">
+  <div class="resource-card__type"><span class="type-dot"></span>sample</div>
+  <h3>不结构化版本：AI 只能吞下一整坨字</h3>
+  <p>这类文本人还能勉强读，AI 也能读，但读得很累。它看不见结构，只能在一整坨文字里自己计算关系。</p><pre class="prompt-block"><code>内容吸引力的本质是对抗性内容之所以让人停下来往往不是因为信息本身而是因为信息里出现了对抗对抗让陈述变成故事比较两句话
+这是一盏灯这是一盏我无数次想摔烂的灯第一句话只是陈述第二句话出现了对抗高吸引力开头来自对抗人和物的对抗人和自己的对抗人和环境的对抗</code></pre>
+</section>
+
+
+<section class="resource-card resource-card--sample" data-kind="sample">
+  <div class="resource-card__type"><span class="type-dot"></span>sample</div>
+  <h3>Markdown 版本：把结构直接写给 AI 看</h3>
+  <p>Markdown 用极简符号表达结构，不依赖 Word、PDF 或某个软件的隐藏格式。你看到什么，它就是什么；AI 读到什么，也基本就是什么。</p><pre class="prompt-block"><code># 内容吸引力的本质是对抗性
+
+## 对抗让陈述变成故事
+
+比较两句话：
+- 这是一盏灯
+- 这是一盏我无数次想摔烂的灯
+
+第一句话只是陈述，第二句话出现了对抗。
+
+## 高吸引力开头来自对抗
+
+- 人和物的对抗
+- 人和自己的对抗
+- 人和环境的对抗
+
+**结构全部用符号显式表达出来，不依赖任何软件。**</code></pre>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-79-82-resources"><span>case</span>同一段材料：TXT 屎山 vs Markdown 权重地图</a>
+<a class="resource-panel__item" href="#group-79-82-resources"><span>sample</span>不结构化版本：AI 只能吞下一整坨字</a>
+<a class="resource-panel__item" href="#group-79-82-resources"><span>sample</span>Markdown 版本：把结构直接写给 AI 看</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-080.png" alt="Markdown：同一段材料的两种阅读方式 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-082.png" alt="Markdown：同一段材料的两种阅读方式 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-83-86">
+  <span class="page-anchor" id="slide-83"></span><span class="page-anchor" id="slide-84"></span><span class="page-anchor" id="slide-85"></span><span class="page-anchor" id="slide-86"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>AI 读文字是在分配注意力</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页把 Markdown 的价值推进到 AI 的阅读机制：AI 处理文字是在分配注意力，结构化内容就是一张权重地图，告诉它哪里重要、哪里是补充。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>大模型在处理一段文字的时候，有一个机制叫注意力机制。</p>
+<p>它会计算文字里每个部分和其他部分之间的关系，判断什么和什么是相关的，什么是核心，什么是补充。</p>
+<p>这个计算是有成本的。文字越长、越没有结构，它需要做的计算就越多，而且越容易出错——因为它要自己从一堆文字屎山里找结构，这个过程本身就在消耗它的精力。 给 AI 一个的结构化的文件，相当于给它一个超级精细的导航</p>
+<p>AI 本身的训练原理就是模仿人类大脑的单元运作</p>
+<p>它不是像人一样从头读到尾，而是在判断：这份文件里什么地方最重要，什么地方是支撑性内容，什么地方是细节举例。根据这个判断，它把更多的计算资源分配给重要的地方，把较少的资源分配给次要的地方</p>
+<p>TXT 给不了它这个判断依据</p>
+<p>一坨没有结构的文字，每个字的权重是一样的。AI 不知道哪里是核心观点，哪里是举例说明，哪里是补充信息。它要从头到尾把每一个字都当成同等重要的内容来处理，既低效，又容易抓错重点</p>
+<p>Markdown 把这个判断直接告诉它了。 # 一级标题——这是整篇文章最核心的概念，权重最高。 ## 二级标题——这是支撑核心概念的几个分支，权重次之。 - 列表——这是举例或枚举，是细节层，权重再次之。 正文段落——这是论述，夹在标题之间，帮助理解。</p>
+<p>AI 读到这个结构，不需要自己猜哪里重要，结构本身就是一张权重地图，告诉它该把注意力分配在哪里。</p>
+<p>人读文字是线性的——从左到右，从上到下，一个字一个字往下走。读完了，在脑子里形成一个整体理解。</p>
+<p>AI 不是这样工作的</p>
+<p>它处理一段文字，做的事情是：计算这段文字里每一个词和其他所有词之间的关系。</p>
+<p>这个机制会让计算量超级大</p>
+<p>一段文字里有一百个词，它要计算一百乘以一百，也就是一万对关系</p>
+<p>AI 是在大量结构化文本上训练出来的 代码是结构化的。学术论文是结构化的。技术文档是结构化的。法律条文是结构化的</p>
+<p>它对结构化的输入，天然有更强的响应能力</p>
+<p>结构化还有一个超级巨大的优势，是什么？ 清晰表达「延伸到清晰表达」</p>
+<p>AI 就是在 Markdown 上训练出来的</p>
+<p>AI 看 markdown，就像回家一样自在</p>
+<p>互联网上大量的技术文档、GitHub 项目说明、开发者写的文章，都是 Markdown 格式。这些内容构成了大模型训练数据的重要组成部分。 大模型训练进去的语料，需要进行大量的清洗 早期是用海量巴基斯坦人给做的 他们做的就是把网上所有公开的文本语料，全部清洗成一个又一个的 markdown 文件</p>
+<p>所以 AI 对 Markdown 的结构极度熟悉。</p>
+<p>它看到 # 就知道这是一级标题，看到 - 就知道这是列表，看到 ** 就知道这是强调内容。 这不是你教它的，是它天生就懂的。</p>
+<p>你用 Markdown 写的文件，AI 处理起来就像在读母语。你用其他格式写的文件，它要先翻译，翻译过程中就有损耗</p>
+<p>看飞书，其实也是的</p>
+<p>这里有一个很多人没想清楚的根本问题：</p>
+<p>你的知识库 到底是给谁看的</p>
+<p>如果是给人看的，用 Word、用备忘、用思维导图、用什么各种精美的笔记软件，用任何好看的软件都行。 人能读，能理解，就够了</p>
+<p>但你的知识库是给 AI 看的。</p>
+<p>你以前存文件、写笔记，想的是「我怎么看着方便」。 现在你要想的是：「AI 怎么读着清楚。」 这是两种完全不同的信息组织逻辑。</p>
+<p>给人看的内容，可以模糊，可以没有语境依赖。人有理解力，能脑补。 给 AI 看的内容，要清晰，要结构化，要把所有隐含的东西显式地写出来。AI 没有脑补能力，它只能处理你真正写出来的东西。</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-87-89">
+  <span class="page-anchor" id="slide-87"></span><span class="page-anchor" id="slide-88"></span><span class="page-anchor" id="slide-89"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>知识库到底是给谁看的</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页把问题落回知识库建设：过去整理资料是给人用，未来整理资料是为了让 AI 替你工作，所以格式清洗和层级架构会直接影响 AI 能不能干活。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>这就是知识库建设最核心的底层逻辑</p>
+<p>文件结构清不清晰，标题层级对不对，内容有没有显式地把重点说出来——这些细节，直接决定了 AI 从你的知识库里能提取出多少有用的东西。</p>
+<p>这一点想清楚了，你对整个知识库应该怎么建、文件应该怎么写，会有完全不同的判断</p>
+<p>过去所有的工具，都是围绕人设计的 建一个文件夹、写一份文档、整理一套资料，你想的是「我怎么用着顺手」。 界面要好看，操作要直觉，信息要一眼看懂 因为使用者是人，所以一切都在迁就人的理解方式</p>
+<p>但如果未来真正在调用这些资料、真正在执行任务的是 AI，那你建设这一切的标准就要彻底换掉</p>
+<p>今天学员学习这门课 是学给自己的吗？不，是给你电脑上这个 AI 学的</p>
+<p>「输出 markdown 结构化的知识文件」 「帮我输出成 markdown」 「输出整理成 md 格式」</p>
+<p>课后复盘时，要做的，最重要的事情，就是清洗文件格式 怎么做？手动吗？ 不，用 Agent，Claude Code 「拿案例演示」</p>
+<p>检索会消耗大量的上下文「延伸到上下文」</p>
+<p>不好管理，低检索效率</p></div></section>
+      
+<section class="resource-section" id="group-87-89-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--workflow" data-kind="workflow">
+  <div class="resource-card__type"><span class="type-dot"></span>workflow</div>
+  <h3>复盘动作：把资料清洗成 AI 本命格式</h3>
+  <p>课后整理资料时，先别追求漂亮排版，先追求让 AI 读得清楚。</p><ol class="workflow-steps"><li>文字资料优先转成 Markdown，保留标题、层级、列表、重点和例子。</li><li>表格数据优先转成 CSV，让字段和行列关系清楚。</li><li>遇到 Word、PDF、截图、聊天记录，先整理成结构化文字，再放进项目。</li><li>清洗时不要只换后缀，要把隐含结构显式写出来。</li><li>可以直接对 Agent 说：帮我输出成 markdown，输出整理成 md 格式，输出 markdown 结构化的知识文件。</li></ol>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-87-89-resources"><span>workflow</span>复盘动作：把资料清洗成 AI 本命格式</a></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-90-93">
+  <span class="page-anchor" id="slide-90"></span><span class="page-anchor" id="slide-91"></span><span class="page-anchor" id="slide-92"></span><span class="page-anchor" id="slide-93"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>项目结构必须长得像你的业务</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>群里平时会有很多人问我： 我的文件夹应该长什么样？ 我脑子里会产生两个念头，1 是我不知道，2 是为什么要来问我 项目结构不是一套可以复制的模板，它是你的业务的物理形态。你的业务是什么样的，你的项目结构就是什么样的。</p>
+<p>「演示我的项目结构」 我是做知识付费的，不承担内容</p>
+<p>所以学员会看到….</p>
+<p>靓做知识付费的，而且也要承担内容职能 演示两个结构</p>
+<p>同一个工具，同一套逻辑，但两个人建出来的项目结构长得完全不一样——因为学员的工作内容不一样，学员需要 AI 了解的东西不一样。 没有一个全世界通用的架构 根据自己真实的情况来就可以了</p>
+<p>你的项目是你工作的镜子，它长什么样，取决于你每天在做什么、需要 AI 帮你处理什么。 先搞清楚自己在做什么，再决定文件夹里放什么。顺序不能反。</p>
+<p>群里平时会有很多人问我： 我的文件夹应该长什么样？ 我脑子里会产生两个念头，1 是我不知道，2 是为什么要来问我 项目结构不是一套可以复制的模板，它是你的业务的物理形态</p>
+<p>你的业务是什么样的，你的项目结构就是什么样的</p>
+<p>「演示我的项目结构」 我是做知识付费的，不承担内容 靓做知识付费的，而且也要承担内容职能 演示两个结构</p>
+<p>同一个工具，同一套逻辑，但两个人建出来的项目结构长得完全不一样，因为学员的工作内容不一样，学员需要 AI 了解的东西不一样。 没有一个全世界通用的架构，根据自己真实的情况来就可以了</p>
+<p>项目结构必须因业务而异</p>
+<p>所以项目结构的设计原则只有一条</p>
+<p>你的业务需要 AI 了解什么，你就放什么进去。 把这些信息找出来，整理成文件，放进对应的文件夹，这就是你的项目结构。</p>
+<p>它没有对错，只有合不合你的业务。</p>
+<p>你的业务长什么样，你的项目就长什么样。</p>
+<p>关于里面的人设锚点，我会有一些自己比较独特的看法 实测下来，效果是非常炸裂的</p>
+<p>你让 AI 帮你出十条选题，它出来了，你看了一圈，发现没有一条是你能用的。不是因为选题不好，是因为那些选题不像你会说的话，不是你会关心的角度，不是你的受众会在意的问题。 这不是 AI 的问题，是它根本不知道你是谁。</p>
+<p>它给你的是一个「自媒体创作者」的通用选题，不是「你」的选题。 人设锚点解决的就是这个问题。</p>
+<p>表达风格——决定内容的形状 每个人说话的方式都不一样。有人喜欢短句，有人喜欢铺陈。有人语气犀利，有人温和亲切。有人说话带着幽默，有人偏向严肃。 这些差异，构成了你内容的辨识度。</p>
+<p>但 AI 不知道你的风格是什么，除非你告诉它。你把它写成文件放在这里，往后所有的内容都在这个风格里生长出来。它写的文案不再是「一个 AI 的文案」，是「你的文案」。</p>
+<p>世界观——决定内容的内核</p>
+<p>一个人的世界观是：减肥本质是自律和意志力的问题。 他出的选题会是：「你减不了肥，是因为不够自律」「凌晨五点起来运动的人，三个月瘦了 20 斤」「减肥失败的人，都有这个共同点」 另一个人的世界观是：减肥本质是认知问题，大多数人方法就是错的。 他出的选题会是：「你一直减不下去，不是意志力的问题」「我吃得比你多，但比你瘦，因为我知道这件事」「减肥行业不会告诉你的真相」</p>
+<p>同一个赛道，同一批受众，但因为世界观不同，选题的方向、切入角、和受众的关系完全不一样。 前者在激励人，后者在颠覆认知。前者的受众觉得「我需要更努力」，后者的受众觉得「原来我一直被骗了」。</p>
+<p>AI 不知道你是哪种世界观，它给你的就是两种混在一起的大杂烩。它知道了，它才能一直在你的方向上出选题。</p>
+<p>为什么这个对选题很重要？ 因为同一件事，不同世界观的人，切入的角度完全不同。一个相信「流量本质是供需匹配」的人，和一个相信「流量本质是情绪共鸣」的人，面对同一个话题，出来的选题方向截然不同。</p>
+<p>AI 不了解你的世界观，它给你的选题就是平均值。它了解了，它给你的选题才是你的角度 「房琪」有人说，青岛是红瓦绿树碧海蓝天。</p>
+<p>但我觉得，青岛是大海写给陆地的一封情书，写了一百年，还没写完。</p>
+<p>受众画像——决定内容的靶</p>
+<p>你在对谁说话，决定了你说什么、怎么说。</p>
+<p>你的受众是 25 岁刚入行的新人，还是做了五年的老手？他们最大的焦虑是什么？他们在意面子还是在意效率？他们愿意为什么买单？ 这些问题的答案，直接影响选题的方向、文案的切入角、内容的深浅。</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-090.png" alt="项目结构必须长得像你的业务 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-94-97">
+  <span class="page-anchor" id="slide-94"></span><span class="page-anchor" id="slide-95"></span><span class="page-anchor" id="slide-96"></span><span class="page-anchor" id="slide-97"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>自媒体代运营</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>这个结构，注意它和个体创作者、实体商家最根本的差别在哪里。</p>
+<p>它多了两个其他类型都没有的东西：跨客户方法论，和客户文件夹的模板机制。 这两个东西，直接反映了代运营业务的本质。</p>
+<p>代运营同时服务多个客户，每个客户的赛道不同、人设不同、受众不同。但有一些底层的东西是跨客户通用的——好的选题逻辑是什么、文案结构怎么设计、数据怎么解读。 这些东西如果每次服务新客户都要重新想，那是在重复造轮子。 把它们沉淀成跨客户方法论放在这里，AI 每次帮任何一个客户工作，都能调用这套方法论作为底座。你服务的客户越多，这个方法论文件夹就越厚，你整个公司的内容生产能力就越强。 这是代运营公司真正的核心资产——不是某一个客户的内容，是跨客户沉淀下来的方法论体系。</p>
+<p>每个客户的文件夹是完全隔离的。</p>
+<p>你打开客户 A 的文件夹跟 AI 工作，它只看客户 A 的内容，不会把客户 B 的风格、数据、人设混进来。 这对代运营来说是非常关键的——你同时服务十个客户，每个客户的调性完全不同，AI 必须进入哪个项目就只了解哪个客户</p>
+<p>个人职场使用者 核心对象：职场牛马 典型资料：个人基础信息、行业知识、项目管理、会议沟通、方案合同、个人成长 典型任务：职场工作推进、资料存档、项目管理、自我提升</p>
+<p>一些我看到特别好的观点，知识，我怎么转成md来存档？</p>
+<p>Claude Code，OpenClaw 有什么区别</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-98-101">
+  <span class="page-anchor" id="slide-98"></span><span class="page-anchor" id="slide-99"></span><span class="page-anchor" id="slide-100"></span><span class="page-anchor" id="slide-101"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Claude Code 是 项目执行型 Agent</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>Claude Code 和 OpenClaw，都是 Agent，但本质不是同一个赛道</p>
+<p>Claude Code 更像一个住在项目里的执行员工；OpenClaw 更像一个住在你电脑里的个人助理</p>
+<p>Claude Code 的优势在干活 OpenClaw 的优势在个性化唠嗑：它更像一个有设定、有记忆、有生活痕迹的助理</p>
+<p>Claude Code 住在终端里，也会在某个项目制的文件夹里，它面对着你积累的所有的资料，案例，数据，业务上下文这些高价值资料</p>
+<p>它就活在了这些资料里，你让它干嘛，它就会在这个项目里的资料世界里，拿到你想它干的任务，进入资料里，开始干活，最后交东西</p>
+<p>Claude Code 的关键词不是「聊天」，而是「交付」，也就是我们说的干活，干活嘎嘎猛</p>
+<p>看一段我的和 小龙虾 的对话</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-100.png" alt="Claude Code 是 项目执行型 Agent 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-102-104">
+  <span class="page-anchor" id="slide-102"></span><span class="page-anchor" id="slide-103"></span><span class="page-anchor" id="slide-104"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>身份层</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code 与文件夹即世界」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>它火，不是因为它更会干活。 而是因为它更符合人们对「未来 AI 助理」的那种想象叙事</p>
+<p>非常直观的能让普通人看到 AI 的潜力</p>
+<p>Claude Code 是项目执行型 Agent</p>
+<p>它的核心是：进入你的业务资料，把一件事干完</p>
+<p>但小龙虾更像个人记忆型助手</p>
+<p>它的核心不是「帮你完成某个项目」，而是一个懂我、记得我、陪着我、会越来越了解我的助理</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>10</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>4</dd></div><div class="metrics__row"><dt>关键图</dt><dd>5</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-70-73"><div class="rel-card__name">文件夹即世界：知识库就是 AI 的办公室</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-74-77"><div class="rel-card__name">把隐性经验写成 AI 能调用的文件</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-78-78"><div class="rel-card__name">它冷静 它持久</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-79-82"><div class="rel-card__name">Markdown：同一段材料的两种阅读方式</div><div class="text-mono ink-muted">3 材料 · 2 图</div></a><a class="rel-card" href="#group-83-86"><div class="rel-card__name">AI 读文字是在分配注意力</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-87-89"><div class="rel-card__name">知识库到底是给谁看的</div><div class="text-mono ink-muted">1 材料 · 0 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

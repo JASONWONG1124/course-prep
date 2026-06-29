@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obsidian 本地知识库 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="active" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#0F766E">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>Obsidian 本地知识库</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">4 知识点</span><span class="text-mono ink-muted">4 材料</span><span class="text-mono ink-muted">4 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#0F766E">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ Obsidian 本地知识库</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-140-143"><span class="toc-index">01</span><span>Obsidian：打开本地 Markdown 世界</span></a></li><li><a href="#group-144-147"><span class="toc-index">02</span><span>本地知识库和 Agent 的分工</span></a></li><li><a href="#group-148-151"><span class="toc-index">03</span><span>YAML 和双链：给文件写封面和关系</span></a></li><li><a href="#group-152-154"><span class="toc-index">04</span><span>YAML + 双链的提示词和 world-weaver</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class="is-active"><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Obsidian · CH 08</div><h1 class="detail__title">Obsidian 本地知识库</h1><p class="detail__lede-body">把 Markdown 文件沉淀成可阅读、可关联、可被 Agent 使用的知识系统。</p>
+<article class="knowledge-entry page-group-card" id="group-140-143">
+  <span class="page-anchor" id="slide-140"></span><span class="page-anchor" id="slide-141"></span><span class="page-anchor" id="slide-142"></span><span class="page-anchor" id="slide-143"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Obsidian：打开本地 Markdown 世界</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Obsidian 本地知识库」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>常见疑问是：既然已经有飞书、Notion、语雀、印象笔记等工具，为什么还要使用 Obsidian。这个问题的关键不在笔记软件本身，而在于本地 Markdown 文件夹是否能被 Agent 稳定读取和维护。</p>
+<p>这个问题问得很对。 因为如果只是「写笔记」，这些工具都能写</p>
+<p>飞书文档甚至更好看，更适合协作，也更适合直接分享给别人。</p>
+<p>但我们今天不是在讲普通笔记</p>
+<p>我们从头到尾讲的都是 Claude Code 的项目知识库 这两件事的要求是不一样的</p>
+<p>飞书、Notion 这类文档工具，本质上是云端文档工具</p>
+<p>你的内容主要存在它们的服务器里</p>
+<p>你打开的是一个网页、一个账号、一个在线空间</p>
+<p>但 Claude Code 的工作方式不是这样的</p>
+<p>Claude Code 最擅长进入你电脑本地的一个文件夹 在你的项目，在你的文件夹里面工作</p>
+<p>Agent 读取这个文件夹里的资料，理解这个文件夹里的规则，然后在这个文件夹里生成文件、修改文件、整理结构、执行任务。</p>
+<p>所以我们前面一直讲： 文件夹即世界</p>
+<p>这个世界最好就在你的电脑本地 在本地，用 markdown 无限沉淀，资料才是最稳的</p>
+<p>Obsidian 本质上不是一个「云笔记软件」。</p>
+<p>它打开的不是一个账号，不是一个网页数据库</p>
+<p>它打开的是你电脑上的一个本地文件夹 里面的每一篇笔记，本质上都是一个 Markdown 文件 也就是我们前面一直讲的 .md 文件</p>
+<p>我打开你电脑里的一个文件夹，然后把这个文件夹里的 Markdown 文件组织成一个知识系统</p>
+<p>那有人会问了： 既然它本质上就是一堆文本文件，那我用 txt 不行吗？</p>
+<p>可以</p>
+<p>但 txt 也能写东西</p>
+<p>今天想了一个选题 用户为什么不愿意付费 短视频开头要制造冲突</p>
+<p>但这些内容写完之后，基本就是一篇一篇躺在那里。你以后要靠文件名、文件夹、搜索去找，它就是散的，没有任何关联的</p>
+<p>但 Obsidian 是统一管理的</p>
+<p>那 Obsidian 和 Claude Code 到底是怎么联动到一起的？</p>
+<p>Claude Code 是怎么工作的，以文件夹项目起点开始，在里面闷头干活的</p>
+<p>那 Obsidian 也是项目制的，一个文件夹，就是一个知识库，里面会有很多业务文件</p>
+<p>那就巧了，它们都是打开文件夹来干活的，以文件夹为中心的</p>
+<p>所以，链接点就出现了</p>
+<p>这是我的知识库文件夹，我用 claude code 打开它，也用 Obsidian 打开它 打开的是同一个文件夹</p>
+<p>Claude Code 看的是文件夹。</p>
+<p>Obsidian 打开的也是这个文件夹。</p>
+<p>它们天然能接上</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-140.png" alt="Obsidian：打开本地 Markdown 世界 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-144-147">
+  <span class="page-anchor" id="slide-144"></span><span class="page-anchor" id="slide-145"></span><span class="page-anchor" id="slide-146"></span><span class="page-anchor" id="slide-147"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>本地知识库和 Agent 的分工</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Obsidian 本地知识库」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>Obsidian 和本地 Markdown 文件夹面对的是同一批文件。文件夹里的内容变化，Obsidian 中会同步显示；Obsidian 中修改文件，本地文件也会同步变化。</p>
+<p>「要演示」</p>
+<p>Obsidian 的价值，不只是存文字，存文件，而是让文件之间产生关系</p>
+<p>它有文件夹结构，让资料能被分类</p>
+<p>还有个很厉害的东西，叫双链，让一篇笔记可以连接另一篇笔记</p>
+<p>它有反向链接，让你知道哪些内容提到过这个概念</p>
+<p>它有搜索、标签、图谱，让一个项目里的知识不再是一堆散落的文件，而是一张逐渐长出来的关系网</p>
+<p>所以 Obsidian 不是让你的知识变高级。</p>
+<p>它是让你的知识变得更容易被人管理，也更容易被 AI 读取。</p>
+<p>我打开你电脑里的一个文件夹，然后把这个文件夹里的 Markdown 文件组织成一个知识系统</p>
+<p>它看起来像笔记软件，但它的底层逻辑不是「我帮你存笔记」 而是管理知识</p>
+<p>Obsidian 不只是「存内容」，而是强调「连接内容」。 很多笔记软件更像资料柜： 我建一个文件夹； 我放一篇笔记； 我分门别类； 我要的时候再找。</p>
+<p>Obsidian 更像一张知识网络： 这篇笔记和那篇笔记有关；</p>
+<p>这个概念被哪些地方提到； 这套方法论能不能连接到某个案例；</p>
+<p>一个选题、一个用户痛点、一个表达风格，能不能互相长出关系。</p>
+<p>所以它特别适合做： 个人知识库</p>
+<p>第二大脑 课程研发资料库 自媒体选题库 用户画像库 项目复盘库</p>
+<p>AI 可读取的业务资料库</p>
+<p>第三，Obsidian 更适合和 AI Agent 协作。 这点是你课程里最重要的。 普通笔记软件是给人看的。</p>
+<p>Obsidian 里的 Markdown 文件，是人能看，AI 也特别容易读。 因为它是纯文本、结构化、本地文件、路径清楚、可被 Claude Code 直接访问。</p>
+<p>结构更清楚 可以用标题、列表、引用、代码块、表格，把内容整理成 AI 和人都更容易理解的结构。</p>
+<p>笔记之间可以互相连接</p>
+<p>你可以用 [[用户画像]] 这样的方式，把一篇笔记链接到另一篇笔记。</p>
+<p>有反向链接</p>
+<p>你点开「用户画像」，它会告诉你：有哪些笔记提到过「用户画像」。这就很厉害，因为知识不是只按文件夹分类，而是会自然长出关系。</p>
+<p>有图谱视图</p>
+<p>它可以把笔记之间的连接可视化成一张网。不是为了好看，而是让你看到：哪些概念是中心，哪些资料彼此有关。</p>
+<p>适合长期积累 TXT 更像临时记录；Obsidian 更像一个会不断生长的个人知识系统。</p>
+<p>第三，Obsidian 更适合和 AI Agent 协作 这点是你课程里最重要的 普通笔记软件是给人看的</p>
+<p>Obsidian 里的 Markdown 文件，是人能看，AI 也特别容易读 因为它是纯文本、结构化、本地文件、路径清楚、可被 Claude Code 直接访问</p>
+<p>你点开「用户画像」，它会告诉你：有哪些笔记提到过「用户画像」</p>
+<p>适合长期积累 TXT 更像临时记录；Obsidian 更像一个会不断生长的个人知识系统</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-148-151">
+  <span class="page-anchor" id="slide-148"></span><span class="page-anchor" id="slide-149"></span><span class="page-anchor" id="slide-150"></span><span class="page-anchor" id="slide-151"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>YAML 和双链：给文件写封面和关系</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页说明 Markdown 文件不能只放正文，YAML 是文件封面，双向链接是文件之间的关系，二者让人和 Agent 都更容易调用知识。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>MD 文件里直接放知识原文就可以了吗 可以，一点毛病没有，但是会有几个缺点，会让 AI 读它的效率不够高，理解不够透彻</p>
+<p>它读到的是一坨没有被消化的原始信息 Agent 不好检索，它一看，就得把整篇东西看完，浪费上下文</p>
+<p>我们不是让 AI 给我们干活的，我们是给 AI 服务的 服务这么差，它能把活干漂亮吗？</p>
+<p>所以，知识 markdown 文件，里面应该要有一些固定的格式</p>
+<p>这是一篇标准的 markdown 文件格式</p>
+<p>你看图一顶部那个红框区域，里面有 title、claim、use、category、tags 这些字段</p>
+<p>这个区域叫 YAML，它是每篇 Markdown 文件最顶部的一块元数据区域，用三条横线 —— 包裹起来</p>
+<p>元数据是什么意思？ 「元」就是「关于这个东西本身的描述」。 文章的正文是内容，YAML 是关于这篇文章的描述——这篇文章叫什么、核心观点是什么、用来做什么、属于哪个分类、有哪些标签。</p>
+<p>它不是给人读的正文，是给系统读的索引信息。</p>
+<p>YAML 对 Agent 和 Obsidian 来说，就是这本书的封面信息</p>
+<p>底部红框区域，里面有三条带下划线的蓝色链接，每一条链接到另一篇文章，并且附上了说明这两篇文章之间关系的一句话 这叫双向链接，写法是 [[文件名]]</p>
+<p>普通链接是单向的——A 指向 B，但 B 不知道 A 的存在。 双向链接是双向的——A 链接了 B，B 那边会自动出现「有人链接了我」的记录。两篇文章互相知道对方的存在。 为什么这很重要？</p>
+<p>你的知识不是孤立存在的，它们之间有真实的逻辑关联。 这篇「自媒体选题理解」，和「莱考夫哲学对选题的应用」之间有关联，和「专家型 IP 的致命错误」之间有关联，和「不会算计的内容都是噪音」之间也有关联。 这些关联在你脑子里是清楚的，但在独立的文件系统里是断掉的。 双向链接把这些断掉的关联重新连接起来。 对 AI 来说，双向链接意味着它不再只是读一篇文章，它能顺着链接走，读完这篇再读相关的那几篇，理解它们之间的逻辑关系</p></div></section>
+      
+<section class="resource-section" id="group-148-151-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--sample" data-kind="sample">
+  <div class="resource-card__type"><span class="type-dot"></span>sample</div>
+  <h3>YAML frontmatter 最小字段样例</h3>
+  <p>字段不是越多越好。重点是让人和 Agent 快速知道：这篇是什么、主张什么、什么时候该调用、属于哪里。</p><pre class="prompt-block"><code>---
+title: 规范标题
+claim: 核心主张，一句话说清这篇到底主张什么
+use: 这篇能给你什么，读完能拿来干嘛
+category: 一级/二级
+tags: [具体关键词，2到4个，不要用泛词]
+---</code></pre>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-148-151-resources"><span>sample</span>YAML frontmatter 最小字段样例</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-150.png" alt="YAML 和双链：给文件写封面和关系 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-152-154">
+  <span class="page-anchor" id="slide-152"></span><span class="page-anchor" id="slide-153"></span><span class="page-anchor" id="slide-154"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>YAML + 双链的提示词和 world-weaver</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页给出可直接复做的 YAML + 双链处理方法：可以用完整提示词，也可以用 world-weaver，把散落 Markdown 文件织成知识网络。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>处理 YAML 和双向链接有两种方式：一种是直接使用完整提示词，让 Agent 按要求补充 YAML 头部和文末关联；另一种是调用 world-weaver，把这件事作为固定 Skill 执行。</p></div></section>
+      
+<section class="resource-section" id="group-152-154-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--prompt" data-kind="prompt">
+  <div class="resource-card__type"><span class="type-dot"></span>prompt</div>
+  <h3>YAML + Obsidian 双向链接完整提示词</h3>
+  <p>这段提示词要完整保留，学员回去处理自己的 Markdown 知识库时可以直接复制使用。</p><pre class="prompt-block"><code>我有一批 Markdown 文件需要你帮我处理，让它们更适合作为 AI 知识库来使用。
+
+在文章顶部添加 YAML 头部。
+
+根据我的知识库的实际内容和架构，自己设计最合适的字段。
+
+字段设计的原则：
+- 能帮助快速定位这篇文章是什么
+- 能说明这篇文章在什么场景下应该被调用
+- 能体现它在我的知识体系里的位置和分类
+- 字段数量不要太多，够用就好，3-6个为宜
+
+在文章底部添加 Obsidian 双向链接。
+
+读完所有文件后，找出这篇文章和其他文件之间真实存在的逻辑关联。
+
+格式如下：
+## 相关文件
+- [[文件名]] — 说明这两篇文章之间的关联关系是什么
+
+注意：
+- 只链接真正有关联的文件，不要为了链接而链接
+- 每条链接后面必须附上一句话，说明两者之间的关系是什么
+- 关联关系可以是：互相支撑、互相补充、因果关系、同一主题的不同角度等</code></pre>
+</section>
+
+
+<section class="resource-card resource-card--skill" data-kind="skill">
+  <div class="resource-card__type"><span class="type-dot"></span>skill</div>
+  <h3>world-weaver：把文件堆织成知识网络</h3>
+  <p>当项目里已经有几十篇 Markdown，world-weaver 的价值就出来了。它不是给你做漂亮图谱，而是给每个文件写身份证，再给相关文件建立强连接。</p><div class="skill-grid"><article class="skill-card">
+  <h4>world-weaver</h4>
+  <p>给 Markdown 文件写入 YAML frontmatter，并用 Obsidian 双链织出语义关联网络。</p>
+  <dl>
+    <div><dt>产物</dt><dd>每个文件头部的 YAML + 文末的 ## 关联</dd></div>
+    <div><dt>什么时候用</dt><dd>项目里已经有一批 Markdown 文件，但它们还是散落文件堆、彼此没有关系时。</dd></div>
+    <div><dt>前置条件</dt><dd>建议先完成 world-builder，至少要有 CLAUDE.md 和稳定项目结构。</dd></div>
+  </dl>
+</article></div>
+</section>
+
+
+<section class="resource-card resource-card--workflow" data-kind="workflow">
+  <div class="resource-card__type"><span class="type-dot"></span>workflow</div>
+  <h3>双链质量自查</h3>
+  <p>双链不是越多越好，链错了会污染知识库。</p><ol class="workflow-steps"><li>只链接真正有关联的文件，不要为了链接而链接。</li><li>每条链接后面写一句关系说明，不要只放文件名。</li><li>如果只是关键词相同，不算强关联。</li><li>如果一个文件被大量无意义引用，它可能变成大哥节点，要回头清理。</li><li>跨业务域链接要更谨慎，必须说清为什么这个跨域有意义。</li></ol>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-152-154-resources"><span>prompt</span>YAML + Obsidian 双向链接完整提示词</a>
+<a class="resource-panel__item" href="#group-152-154-resources"><span>skill</span>world-weaver：把文件堆织成知识网络</a>
+<a class="resource-panel__item" href="#group-152-154-resources"><span>workflow</span>双链质量自查</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-152.png" alt="YAML + 双链的提示词和 world-weaver 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-154.png" alt="YAML + 双链的提示词和 world-weaver 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>4</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>4</dd></div><div class="metrics__row"><dt>关键图</dt><dd>4</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-140-143"><div class="rel-card__name">Obsidian：打开本地 Markdown 世界</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-144-147"><div class="rel-card__name">本地知识库和 Agent 的分工</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-148-151"><div class="rel-card__name">YAML 和双链：给文件写封面和关系</div><div class="text-mono ink-muted">1 材料 · 1 图</div></a><a class="rel-card" href="#group-152-154"><div class="rel-card__name">YAML + 双链的提示词和 world-weaver</div><div class="text-mono ink-muted">3 材料 · 2 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

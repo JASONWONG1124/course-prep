@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code × Obsidian × 飞书 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="active" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#475569">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>Claude Code × Obsidian × 飞书</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">2 知识点</span><span class="text-mono ink-muted">0 材料</span><span class="text-mono ink-muted">2 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#475569">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ Claude Code × Obsidian × 飞书</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-155-157"><span class="toc-index">01</span><span>x</span></a></li><li><a href="#group-158-159"><span class="toc-index">02</span><span>飞书 CLI</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class="is-active"><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Three-way Link · CH 09</div><h1 class="detail__title">Claude Code × Obsidian × 飞书</h1><p class="detail__lede-body">明确三种工具的分工，把本地知识、Agent 执行和团队交付接起来。</p>
+<article class="knowledge-entry page-group-card" id="group-155-157">
+  <span class="page-anchor" id="slide-155"></span><span class="page-anchor" id="slide-156"></span><span class="page-anchor" id="slide-157"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>x</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code × Obsidian × 飞书」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>明确分工</p>
+<p>Obsidian 管知识：承载本地 Markdown 文件，帮助人整理、阅读和看见资料关系</p>
+<p>Claude Code 干任务：Agent 进入项目、理解目标、调用资料、和大模型对话，Agent 干活</p>
+<p>Obsidian 管知识 → Claude Code 干任务 → 飞书接协作和交付</p>
+<p>飞书接协作和交付：承接团队共创、对外发布、数据记录、学员或客户交付</p>
+<p>Obsidian、claude code、文件夹、项目、知识，都是本地的，没法给被人看，或者团队没法协作，靓靓是自己一个项目，我是自己一个项目，李哥是自己一个项目，那涉及团队协作的怎么办 由于我们用的是不同的项目，而且团队内需要协作，这时候飞书就承担了一个连接的角色</p>
+<p>飞书在这个体系里扮演什么角色</p>
+<p>这两个工具有一个共同的特征：它们都是本地的</p>
+<p>Obsidian、claude code、文件夹、项目、知识，都是本地的，没法给被人看，团队没法协作 靓靓是自己一个项目，我是自己一个项目，李哥是自己一个项目，那涉及团队协作的怎么办 由于我们用的是不同的项目，每个人在自己的本地世界里工作，但团队需要连接，业务需要流转，客户需要拿到东西</p>
+<p>飞书承接的四件事</p>
+<p>第一：团队共创</p>
+<p>团队成员各自在本地用 Claude Code 生产内容，但生产出来之后，需要一个公共的地方汇总、讨论、迭代。</p>
+<p>飞书文档支持多人实时协作，你写一段，亮亮补一段，李哥改一段，所有人的工作在同一个地方汇聚。本地产出，云端协作。</p>
+<p>第二：对外发布</p>
+<p>你用 Claude Code 写好了一份方案、一套课程大纲、一篇内容策划——这些东西要发给客户、发给合作方、发给学员，不能让他们来看你的本地文件夹。</p>
+<p>飞书文档可以生成分享链接，对方不需要任何账号就能打开看。本地生产，飞书发布。</p>
+<p>第三：数据记录</p>
+<p>团队的运营数据、项目进度、客户信息——这些需要多人共同维护、随时更新的数据，放在飞书多维表格里。</p>
+<p>每个人本地的项目是自己的，但团队层面的数据在飞书里是共享的、实时同步的。</p>
+<p>第四：学员和客户交付</p>
+<p>课程资料、学习文档、项目报告——这些交付给学员或客户的东西，通过飞书来承接。</p>
+<p>你在本地用 Claude Code 生产，生产完之后发布到飞书，学员在飞书里接收、学习、互动。交付这件事，在飞书里完成。这时候飞书就承担了一个连接的角色</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-155.png" alt="x 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-158-159">
+  <span class="page-anchor" id="slide-158"></span><span class="page-anchor" id="slide-159"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>飞书 CLI</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「Claude Code × Obsidian × 飞书」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>链接飞书，我们需要通过飞书 CLI 以前，软件和软件之间，几乎是不可能进行联动交互的</p>
+<p>但现在 Agent 时代，这个就可以实现了</p>
+<p>Claude code 在终端里，飞书也可以被安装到终端里 既然软件和软件之间，不能互通 那就在终端里，手拉手互通</p>
+<p>我们只需要安装一个飞书的 CLI，在电脑的终端里 就可以让 claude code 连通飞书了</p>
+<p>接着可以演示两个我之前做过的东西 我用 Agent 做好了一个 Claude Code 宝典，虽然是 AI 写的，但里面的表述风格，还有整个宝典逻辑，怎么进行，能通俗易懂讲透，都是我的思路 我在 Agent 里写完了，那咋给群里面的可以观察</p>
+<p>飞书 我就让 Claude Code，帮我写入飞书，帮我直接排好版 对此我还特地做了一个排这种富文本的排版的 skill</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-158.png" alt="飞书 CLI 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>2</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>0</dd></div><div class="metrics__row"><dt>关键图</dt><dd>2</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-155-157"><div class="rel-card__name">x</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-158-159"><div class="rel-card__name">飞书 CLI</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

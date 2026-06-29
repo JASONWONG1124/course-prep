@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>复盘场景 · Claude Code 知识库</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="active" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="active" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<section class="entry-hero rule-bottom">
+  <div class="container-home">
+    <div class="text-micro accent">Review Scenarios</div>
+    <h1>复盘场景</h1>
+    <p class="ink-dim">不按课件顺序，而按课后最常见的真实任务进入资料站。</p>
+  </div>
+</section>
+<main class="container-home entry-main"><div class="scenario-grid-light"><a class="scenario-card scenario-card--light" href="opening.html"><div><span class="scenario-card__icon">◇</span><h3>安装配置</h3><p>确认环境、终端、Claude Code 和项目入口能正常打开。</p></div><span class="scenario-card__arrow">→</span></a><a class="scenario-card scenario-card--light" href="agent-workstyle.html"><div><span class="scenario-card__icon">◇</span><h3>理解 Agent</h3><p>分清 Chat、Prompt、伪智能体和项目制 Agent 的边界。</p></div><span class="scenario-card__arrow">→</span></a><a class="scenario-card scenario-card--light" href="project-world.html"><div><span class="scenario-card__icon">◇</span><h3>建立项目</h3><p>把业务资料、判断和文件夹结构组织成 Agent 的工作现场。</p></div><span class="scenario-card__arrow">→</span></a><a class="scenario-card scenario-card--light" href="claude-md.html"><div><span class="scenario-card__icon">◇</span><h3>写 CLAUDE.md</h3><p>让 Agent 知道项目目标、资料边界、执行规则和禁区。</p></div><span class="scenario-card__arrow">→</span></a><a class="scenario-card scenario-card--light" href="hands-on-project.html"><div><span class="scenario-card__icon">◇</span><h3>使用 Skill</h3><p>用 SANHESkill 把业务地图、项目结构和资料网络搭出来。</p></div><span class="scenario-card__arrow">→</span></a><a class="scenario-card scenario-card--light" href="obsidian.html"><div><span class="scenario-card__icon">◇</span><h3>Obsidian 复盘</h3><p>用 YAML 和双链维护本地 Markdown 知识库。</p></div><span class="scenario-card__arrow">→</span></a></div></main>
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

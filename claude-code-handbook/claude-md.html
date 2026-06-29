@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLAUDE.md 与规则系统 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="active" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#0E7490">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>CLAUDE.md 与规则系统</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">7 知识点</span><span class="text-mono ink-muted">3 材料</span><span class="text-mono ink-muted">4 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#0E7490">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ CLAUDE.md 与规则系统</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-105-108"><span class="toc-index">01</span><span>CLAUDE.md：项目入口文件</span></a></li><li><a href="#group-109-112"><span class="toc-index">02</span><span>不同项目的 CLAUDE.md 该写不同规则</span></a></li><li><a href="#group-113-116"><span class="toc-index">03</span><span>全局规则和项目规则要分开</span></a></li><li><a href="#group-117-120"><span class="toc-index">04</span><span>CLAUDE.md 从哪里来，怎么持续更新</span></a></li><li><a href="#group-121-124"><span class="toc-index">05</span><span>Source of Truth：让 Agent 知道去哪里找</span></a></li><li><a href="#group-125-128"><span class="toc-index">06</span><span>动手之前先立边界</span></a></li><li><a href="#group-129-129"><span class="toc-index">07</span><span>项目规则要能约束真实执行</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class="is-active"><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Rules System · CH 06</div><h1 class="detail__title">CLAUDE.md 与规则系统</h1><p class="detail__lede-body">理解入口文件、规则、Source of Truth 和项目执行边界。</p>
+<article class="knowledge-entry page-group-card" id="group-105-108">
+  <span class="page-anchor" id="slide-105"></span><span class="page-anchor" id="slide-106"></span><span class="page-anchor" id="slide-107"></span><span class="page-anchor" id="slide-108"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>CLAUDE.md：项目入口文件</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「CLAUDE.md 与规则系统」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>不同项目的资料、结构和任务类型会有差异，但都会需要一个共同的入口文件来告诉 Agent 如何理解项目。</p>
+<p>在 Claude Code 项目中，每个项目文件夹都可以放置一个名为 CLAUDE.md 的入口文件。这个文件使用全大写名称，用来声明项目规则、工作方式和 Agent 进入项目后应该优先理解的内容。</p>
+<p>这个文件很特殊</p>
+<p>它不是给人看的记录，也不是普通的项目文件</p>
+<p>它是一个规则文件</p>
+<p>每次你启动 Claude Code，它做的第一件事就是读这个文件 CLAUDE.md 决定了 Claude Code 进入这个项目时，</p>
+<p>第一眼看到的世界是什么样的 读完之后，它就知道了：你是谁，你在做什么，你希望它怎么帮你 从那一刻起，它就不是一个对你一无所知的陌生 AI 了，它是一个已经了解你的情况、知道你的偏好、准备好开始干活的协作者</p>
+<p>不是「可能会读」，不是「如果它心情好会读」，是一定读，每次都读，没有例外</p>
+<p>一个字母的差别，决定了它是否真的会读</p>
+<p>这里分成两种用法，一个叫全局应用，一个叫项目应用 放置的位置不同，影响的范围也不同 全局应用是放在 claude code 的根目录「大本营」下 项目应用就是放在对应项目下</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-109-112">
+  <span class="page-anchor" id="slide-109"></span><span class="page-anchor" id="slide-110"></span><span class="page-anchor" id="slide-111"></span><span class="page-anchor" id="slide-112"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>不同项目的 CLAUDE.md 该写不同规则</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「CLAUDE.md 与规则系统」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>CLAUDE.md 没有标准答案 不同的项目，CLAUDE.md 长得完全不一样</p>
+<p>用来写代码的项目，CLAUDE.md 长这样</p>
+<p>代码项目里全是技术规范 代码的世界里没有风格偏好，没有人设，没有表达调性。代码对就是对，错就是错。</p>
+<p>所以做开发项目的 CLAUDE.md 里，放的是技术信息：</p>
+<p>这个项目用的是什么技术栈——前端用 React，后端用 Python，数据库用 PostgreSQL。 项目的架构是什么——文件夹怎么分，每个模块负责什么，代码规范是什么。 项目背景是什么——这个产品要解决什么问题，现在做到哪个阶段，这次要实现什么功能。</p>
+<p>AI 读完这些，它就知道自己在一个什么样的技术环境里工作，不会给你推荐用不了的技术，不会写出风格不一致的代码</p>
+<p>个人知识库里是偏好和架构说明 因为是自用的</p>
+<p>自媒体项目里是内容规则</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-110.png" alt="不同项目的 CLAUDE.md 该写不同规则 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-113-116">
+  <span class="page-anchor" id="slide-113"></span><span class="page-anchor" id="slide-114"></span><span class="page-anchor" id="slide-115"></span><span class="page-anchor" id="slide-116"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>全局规则和项目规则要分开</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「CLAUDE.md 与规则系统」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>CLAUDE.md 可以分成全局规则和项目规则两类理解。</p>
+<p>全局 CLAUDE.md，应该放个人偏好、协作习惯、表达审美、判断方式。 因为它是跟着你这个人走的。</p>
+<p>你不管打开哪个项目，你都希望 Agent 知道：</p>
+<p>你讨厌 AI 味。</p>
+<p>你喜欢先抓核心矛盾。</p>
+<p>你重视第一性原理、机制拆解和结果验证。</p>
+<p>你希望它不要上来就执行，而是先判断问题是否成立。</p>
+<p>你希望中文表达有人的判断痕迹，不要模板化、工业化、翻译腔。 这些东西不是某一个项目的规则，而是你这个人的工作方式。</p>
+<p>所以它应该放在全局 CLAUDE.md 里。</p>
+<p>项目级 CLAUDE.md 解决的是另一件事。 项目级 CLAUDE.md 不是用来描述你是谁，而是用来告诉 Agent：</p>
+<p>它现在进的是哪个项目。</p>
+<p>这个项目服务什么工作。 项目里有哪些关键目录。 哪些文件是入口文件。 哪些资料是源材料。 哪些文件不能乱改。 遇到不同任务时，应该先读哪里。 资料之间是什么关系。</p>
+<p>全局 CLAUDE.md 塑造协作人格。 项目 CLAUDE.md 建立项目入口。</p>
+<p>一个解决「你是谁」。</p>
+<p>一个解决「这个项目是什么」。</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-117-120">
+  <span class="page-anchor" id="slide-117"></span><span class="page-anchor" id="slide-118"></span><span class="page-anchor" id="slide-119"></span><span class="page-anchor" id="slide-120"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>CLAUDE.md 从哪里来，怎么持续更新</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页讲 CLAUDE.md 的生成和维护：初始规则可以让 Agent 读项目、反问你、替你写；后续每一次摩擦都应该被总结成规则写回入口文件。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>CLAUDE.md 里面的内容怎么来的 方式有很多，如果你项目里的资料已经全部堆放完成了，就可以用 Claude Code 全面读一下项目里的所有内容，让它自己去感受：</p>
+<p>里面有什么内容；</p>
+<p>里面的架构是什么；</p>
+<p>你是做什么的，是一个什么样的人；</p>
+<p>你的业务流程是怎么样的。 最后，让它给你写出一版 CLAUDE.md</p>
+<p>又或者课程中把想象力再打开一下，我们就可以跟 Claude Code 说： 「接下来你可以反问我 10~15 个问题，来了解清楚我到底是一个什么样的人，我有什么偏好，我喜欢什么样的工作风格？最后你再给我定制一个专属于我的 CLAUDE.md。」 不需要我们去一行一行地写，因为很多人往往总结不到自己的，也没办法彻底认清自己</p>
+<p>所以这个方式好的地方就是引入一个第三方，让 Claude Code 来问我们问题，在里面感受到我们，把我们这个人格给塑造出来。学员会发现，其实 Claude Code 往往会比我们更我们自己</p>
+<p>使用技巧：</p>
+<p>我们在使用 Claude Code 的过程中，会发现很多跟他的一点摩擦，他做得不好的地方，或者想让他以后不要再犯的地方。例如，你可能是一个表达需求不太清晰的人，一时半会没有办法改变自己的表达习惯。 那你在跟 Claude Code 对话的过程中会发现，它经常没有深度地理解你的话就开始执行，带着一个很模糊、没有判定边界的方向去做，最后出来的结果不是你想要的。 这时，你就可以明确地跟它说，我平时的表述可能不太清楚，但是你每一次都带着我一些模糊不清的表述就开始干活，没有跟我多次澄清我的问题，没有把一个任务的边界和它的细节全部定死，就导致很多时候，你给我做的东西是不对的。</p>
+<p>以后我不想出现这个情况，你把需要反省的这些地方，编写好一些规则，然后放到 CLAUDE.md 文件里面去。</p>
+<p>学员合作越久，CLAUDE.md 越懂你 每一次摩擦都是一次校准，每一条新规则都是一次进化</p>
+<p>数据权威索引 Source of Truth CLAUDE.md 技巧</p></div></section>
+      
+<section class="resource-section" id="group-117-120-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--prompt" data-kind="prompt">
+  <div class="resource-card__type"><span class="type-dot"></span>prompt</div>
+  <h3>CLAUDE.md 生成提示词：先让 Agent 反问，再写规则</h3>
+  <p>CLAUDE.md 不适合凭空写。更稳的做法是先让 Agent 反问 10-15 个问题，把项目目标、文件边界、交付标准和摩擦点问清楚，再让它生成入口规则。</p><pre class="prompt-block"><code>我想为这个项目生成一份 CLAUDE.md / AGENTS.md。
+请你不要直接开始写，先反问我 10-15 个关键问题。
+
+问题要覆盖：
+- 这个项目到底服务什么业务目标
+- 项目里有哪些关键资料，分别放在哪里
+- 哪些文件可以读，哪些文件不能改
+- 产出应该放到哪里，命名规则是什么
+- 我希望你优先遵守哪些表达风格、判断标准和禁区
+- 过去协作中最容易出现的摩擦点是什么
+- 什么情况下你必须先问我，不能擅自行动
+
+等我回答完以后，再帮我生成一份短而清楚的 CLAUDE.md / AGENTS.md。
+规则只写真正会影响结果的内容，不要写空泛原则。</code></pre>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-117-120-resources"><span>prompt</span>CLAUDE.md 生成提示词：先让 Agent 反问，再写规则</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-120.png" alt="CLAUDE.md 从哪里来，怎么持续更新 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-121-124">
+  <span class="page-anchor" id="slide-121"></span><span class="page-anchor" id="slide-122"></span><span class="page-anchor" id="slide-123"></span><span class="page-anchor" id="slide-124"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Source of Truth：让 Agent 知道去哪里找</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这几页讲 Source of Truth：当项目资料变多，问题不是有没有资料，而是 Agent 能不能找到、该先信谁、入口文件有没有告诉它索引存在。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>它是一个独立的文件，被 CLAUDE.md 单独引用的</p>
+<p>它的作用是告诉 Agent： - 项目里有哪些重要文件。 - 每类资料大概在哪里。 - 每个文件夹是做什么的。 - 某类任务应该优先读哪些文件。 - 目标文件和相关文件之间有什么关系。 当用户要求找资料时，Agent 应该从哪里开始找。</p>
+<p>`Source of Truth` 是让 Agent 在大规模本地资料里快速定位知识的权威入口</p>
+<p>为什么要建立数据权威索引 当本地资料膨胀到几百万字、上千万字以后，模型不可能每次都完整读取</p>
+<p>&gt; 索引不能只是单独存在，它必须被写进 `AGENTS.md` 和 `CLAUDE.md`。</p>
+<p>原因很简单：</p>
+<p>Agent 启动时通常会读取入口文件 - 但它不会自动知道项目里有一个 Source of Truth - 如果入口文件没有提到索引，Agent 就不知道要用它 这样即使建立了索引，也等于没建立</p>
+<p>而且索引还有个好处，文件名通常是承载不了很多观点、案例和方法的，但是在索引里，一个文件，你可以加描述，加标签，真实用途</p>
+<p>所以索引应该怎么建呢？ 需要人写不？ 让 AI 写</p>
+<p>可以这儿跟 AI 说 反正表达的，就是那个意思就行了</p></div></section>
+      
+<section class="resource-section" id="group-121-124-resources">
+  <div class="resource-section__kicker">复盘材料</div>
+  <h3>可复用材料</h3>
+  <div class="resource-grid">
+<section class="resource-card resource-card--prompt" data-kind="prompt">
+  <div class="resource-card__type"><span class="type-dot"></span>prompt</div>
+  <h3>Source of Truth 建立提示词</h3>
+  <p>当项目资料变多以后，Source of Truth 不是把所有知识再复制一遍，而是建立权威索引。它解决「资料在哪里、任务该先读哪里、冲突时信谁」的问题。</p><pre class="prompt-block"><code>当前项目文字量很大，超过单次模型上下文，不能靠每次全量读取资料来工作。
+
+请为这个项目建立一份 Source of Truth（数据权威索引），用于让 Agent 快速理解项目资料结构、关键文件用途、任务到文件的读取路径。
+
+请你完成：
+1. 扫描项目目录，识别核心资料、规则文件、产出文件和原始材料。
+2. 为每类文件写清楚：它回答什么问题，什么时候应该读取。
+3. 建立「任务类型 → 必读文件 / 参考文件」的读取路径。
+4. 标注冲突处理规则：如果多个文件说法不一致，应该优先相信哪一类文件。
+5. 写清维护规则：新增、删除、移动资料后，索引应该如何更新。
+
+建立完成后，请把该索引文件的路径写入 `AGENTS.md` 和 `CLAUDE.md`，让不同 Agent 启动项目时知道这个索引存在。
+
+索引不要被设置为每次必读，只在需要找资料时读取。</code></pre>
+</section>
+
+
+<section class="resource-card resource-card--workflow" data-kind="workflow">
+  <div class="resource-card__type"><span class="type-dot"></span>workflow</div>
+  <h3>测试 Source of Truth 有没有用</h3>
+  <p>索引写完以后，不要只看它格式漂不漂亮，要用任务反测。</p><ol class="workflow-steps"><li>找一个真实任务，比如「根据过往案例写一条新选题」。</li><li>要求 Agent 先只读 Source of Truth，不读全量资料。</li><li>看它能不能判断接下来应该打开哪些文件。</li><li>如果它找错文件，说明索引路径不清楚，要回去改索引。</li><li>如果它每次都想读全部文件，说明索引边界写得太重，要改成按需读取。</li></ol>
+</section>
+</div>
+</section>
+
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="resource-panel"><div class="side-group__head text-mono accent">/ 复盘材料</div><a class="resource-panel__item" href="#group-121-124-resources"><span>prompt</span>Source of Truth 建立提示词</a>
+<a class="resource-panel__item" href="#group-121-124-resources"><span>workflow</span>测试 Source of Truth 有没有用</a></div><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-123.png" alt="Source of Truth：让 Agent 知道去哪里找 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-124.png" alt="Source of Truth：让 Agent 知道去哪里找 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-125-128">
+  <span class="page-anchor" id="slide-125"></span><span class="page-anchor" id="slide-126"></span><span class="page-anchor" id="slide-127"></span><span class="page-anchor" id="slide-128"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>动手之前先立边界</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「CLAUDE.md 与规则系统」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>开始搭建前，需要先判断项目已有资料的积累程度。</p>
+<p>开始操作前，应确认 VS Code、Claude Code 和模型 API 已经可用。</p>
+<p>文件夹结构，就是业务结构的映射 项目结构是业务关系的结果</p>
+<p>如果你不把你的整个业务，从你起床，到你赚到钱的那一刻，中间所有的体系完全展开，是没办法搭一个和你天然适配的文件夹架构的</p>
+<p>但是绝大多数人，是很难完全通过表达和口述，把自己整个复杂的业务体系 &amp; 地图给摊开的</p>
+<p>你的表达，同样充满了歧义和不确定性 想不明白 和 讲不清楚，对 AI 来说，就是灾难</p>
+<p>在建文件夹之前，先把自己的业务说清楚。不能带着一个模糊的说辞，直接要求 AI 生成项目</p>
+<p>大多数人对自己的业务有直觉但没有语言。他们知道自己在做什么、讨厌什么、擅长什么，但从来没有把这些东西**写成一份清晰的文档**。这个 skill 做的就是帮他们把散落在脑子里的碎片，整理成一份有结构、有温度、有灵魂的自我画像。</p>
+<p>自我业务画像的价值不只是「给 AI 看」——它本身就是一次自我认知的梳理。做完之后，「我从来没这么清楚地看过自己在做的事」。这是附带价值，但很重要。</p>
+<p>已有资料较充分时，可以先让 AI 读取原始材料，从中提取业务结构、内容资产、表达风格和关键判断，再生成初始业务地图。</p>
+<p>资料积累不足时，需要先通过问答方式把业务目标、受众、交付方式和真实限制说清楚。这个方法的效果取决于表达者能否准确描述自己的业务。</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-129-129">
+  <span class="page-anchor" id="slide-129"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>项目规则要能约束真实执行</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「CLAUDE.md 与规则系统」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>搭建项目文件夹之前，必须先理清业务流程。文件夹架构不是装饰，而是业务结构的外化。</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>7</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>3</dd></div><div class="metrics__row"><dt>关键图</dt><dd>4</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-105-108"><div class="rel-card__name">CLAUDE.md：项目入口文件</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-109-112"><div class="rel-card__name">不同项目的 CLAUDE.md 该写不同规则</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-113-116"><div class="rel-card__name">全局规则和项目规则要分开</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-117-120"><div class="rel-card__name">CLAUDE.md 从哪里来，怎么持续更新</div><div class="text-mono ink-muted">1 材料 · 1 图</div></a><a class="rel-card" href="#group-121-124"><div class="rel-card__name">Source of Truth：让 Agent 知道去哪里找</div><div class="text-mono ink-muted">2 材料 · 2 图</div></a><a class="rel-card" href="#group-125-128"><div class="rel-card__name">动手之前先立边界</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

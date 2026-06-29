@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从 Chat 到 Agent 工作方式 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="active" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#B45309">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>从 Chat 到 Agent 工作方式</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">6 知识点</span><span class="text-mono ink-muted">0 材料</span><span class="text-mono ink-muted">3 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#B45309">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ 从 Chat 到 Agent 工作方式</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-31-34"><span class="toc-index">01</span><span>Agent</span></a></li><li><a href="#group-35-38"><span class="toc-index">02</span><span>封装提示词的智能体</span></a></li><li><a href="#group-39-42"><span class="toc-index">03</span><span>为什么大模型不能看和操作我电脑里的东西，而所谓的 Agent 就可以呢</span></a></li><li><a href="#group-43-46"><span class="toc-index">04</span><span>它是电脑的超级中枢核心</span></a></li><li><a href="#group-47-50"><span class="toc-index">05</span><span>Claude Code 界面</span></a></li><li><a href="#group-51-54"><span class="toc-index">06</span><span>除了它就没有其他AI Agent工具了吗</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class="is-active"><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Agent Workstyle · CH 03</div><h1 class="detail__title">从 Chat 到 Agent 工作方式</h1><p class="detail__lede-body">把 AI 从聊天窗口推进到文件、终端和真实工作环境里。</p>
+<article class="knowledge-entry page-group-card" id="group-31-34">
+  <span class="page-anchor" id="slide-31"></span><span class="page-anchor" id="slide-32"></span><span class="page-anchor" id="slide-33"></span><span class="page-anchor" id="slide-34"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Agent</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>一种更前沿的应用方式出现了 把 AI 当成聊天窗口，升级成，把它放进一个项目系统里</p>
+<p>可能很抽象，那我们一步步把它全部拆完 说白了就是，帮别人干活的一种人</p>
+<p>它在人类世界里早就存在——房产经纪人是你的 Agent，他代你去谈判、去看房、去签合同。演员经纪人是 Agent，代替演员去谈片酬、接资源、处理合约。特工、间谍，也是 Agent，代表某个政府在另一个地方执行任务。 注意——不是帮你想事情，是帮你做事情</p>
+<p>把这个概念映射到大模型和 AI，就是帮你把手上的活给干掉的 AI 就是智能体，智能体是 Agent 的中文翻译</p>
+<p>它会有很大的区别，以前的是网友，问答机器人 现在的是直接上手完成工作</p>
+<p>「举个例子」</p>
+<p>谁才是真正的智能体 体之争 智能</p>
+<p>封装提示词的智能体 AI Agent 智能体 智能 什么是 智能 - 即智力与能力的总称 从字面上拆解 “智”指感知、认知、记忆和逻辑推理的能力 “能”指在实践中应用知识解决问题、适应环境及创造行动的能力 面对一个没有标准答案的情况，自己判断，自己决定怎么做</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-35-38">
+  <span class="page-anchor" id="slide-35"></span><span class="page-anchor" id="slide-36"></span><span class="page-anchor" id="slide-37"></span><span class="page-anchor" id="slide-38"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>封装提示词的智能体</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>它的行为是被提前写死的。你让它写文案，它按照提示词里定义好的逻辑给你输出。它没有在「自主判断」，它在「执行一套固定指令」 提前写好了说明书，你对着它来做就完事了</p>
+<p>在它背后写了一套提示词，定义了它的角色、它的规则、它的工作流程。你打开它，问它要选题，它按照那套提示词里定义好的逻辑，给你生成输出。 规则已经定死了它要怎么写了</p>
+<p>例如，我最近电脑有点卡，你帮我看一下怎么解决</p>
+<p>演示 - 大模型对话 和 Agent</p>
+<p>为什么大模型不能看和操作我电脑里的东西 而所谓的 Agent 就可以呢</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-39-42">
+  <span class="page-anchor" id="slide-39"></span><span class="page-anchor" id="slide-40"></span><span class="page-anchor" id="slide-41"></span><span class="page-anchor" id="slide-42"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>为什么大模型不能看和操作我电脑里的东西，而所谓的 Agent 就可以呢</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>ChatGPT、Claude、这些大模型，它们不住在你的电脑里</p>
+<p>它们住在 OpenAI、Anthropic 的服务器上，那些服务器可能在美国、在某个数据中心机房里，和你的电脑之间隔着整个互联网。</p>
+<p>你每次打开网页跟它对话，本质上是你的电脑通过网络，把你打的字发送过去，它在那边处理完，再把回答发回来</p>
+<p>它和你的关系，就是网友关系</p>
+<p>你网友能通过微信直接看到和操作到你电脑上的东西吗</p>
+<p>你有一个网友，学员每天在微信上聊得很好，他很聪明，什么都懂，你遇到问题找他他都能给你出主意。</p>
+<p>但有一天你跟他说：「帮我把我桌面上那个文件夹整理一下。」 他能做到吗？ 他在他家，你在你家。他看不到你的桌面，摸不到你的文件夹，哪怕他再聪明，他也没有办法穿越物理距离伸手进你的电脑里操作东西。</p>
+<p>Agent 解决这个问题 大模型是远端的能，本地程序是本地的</p>
+<p>它有权限读你的文件、写你的文件、打开软件、执行命令、操作你的系统</p>
+<p>大家想一下，我们依赖电脑吗？所谓的工作，绝大多数都是在电脑里 电脑里，有我们的 xxx，xxxx，xxxxx</p>
+<p>电脑终端 是什么</p>
+<p>我们平时用的电脑 是什么样的</p>
+<p>你想打开一个文件，双击它。你想删除一个东西，拖进垃圾桶。你想调整音量，拖一个滑块。 这一切——桌面、图标、窗口、按钮——都是给人类设计的视觉包装 哪里不会就点哪里，已经弱智得像学习机了</p>
+<p>它存在的唯一目的，是让不懂电脑的人也能用电脑</p>
+<p>但在这层包装的下面，电脑真实的样子是什么？</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-040.png" alt="为什么大模型不能看和操作我电脑里的东西，而所谓的 Agent 就可以呢 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-43-46">
+  <span class="page-anchor" id="slide-43"></span><span class="page-anchor" id="slide-44"></span><span class="page-anchor" id="slide-45"></span><span class="page-anchor" id="slide-46"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>它是电脑的超级中枢核心</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>终端是 Agent 进入电脑底层操作环境的入口。macOS 可以通过「终端」打开，Windows 可以通过 PowerShell 或命令提示符打开。</p>
+<p>学员能看到的这个黑框，就是终端 没有图标，没有按钮，没有鼠标可以点。只有一行光标在等你输入文字</p>
+<p>你用文字告诉它做什么，它就做什么</p>
+<p>看不懂是吗？门槛很高对吧 想象一下，如果你是一个普通人，买一台电脑回家，打开就是这样的，你用得明白吗，那我情愿不用 想要被极大程度范围被传播和普及的唯一准则，把它做得弱智「豆包 和 Claude 的对比」 为什么 claude code 的用户人数全球不超过 1000 万，但是豆包随随便便就几个亿</p>
+<p>你平时用鼠标能做的所有事情，在终端里都能做，而且能做得更彻底、更精准、更快。</p>
+<p>试一下 echo 「你好，世界」 &gt; 「$HOME/Desktop/ 线下课演示 .txt」 osascript -e 「set volume output volume 80」</p>
+<p>在终端里，你可以一条命令，同时处理一万个文件。 桌面是给普通用户用的，终端是给真正掌控这台电脑的人用的</p>
+<p>关闭、新建、拖动、下一步、返回上一层，这些按钮，本身并没有功能的 按钮被按下的那一刻，其实是把一个命令发送给了终端，让终端去执行的</p>
+<p>而 Claude Code，就是在终端里工作的</p>
+<p>它通过终端，读你的文件、读你的选题，读你的 IP 资料，帮你写文档、执行命令、安装工具、操作你电脑上的任何东西。 终端是它的工作台，是它真正能触碰你电脑世界的入口。</p>
+<p>你安装 Claude Code，打开的第一个东西就是终端。不是因为要故意搞得很技术，而是因为终端就是电脑真正的操作层，Agent 要干活，必须从这里进来。</p>
+<p>Claude Code 界面 最原生的命令行的使用方式 VS Code 插件 - 更图形化的 Claude Code 体验</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-045.png" alt="它是电脑的超级中枢核心 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-47-50">
+  <span class="page-anchor" id="slide-47"></span><span class="page-anchor" id="slide-48"></span><span class="page-anchor" id="slide-49"></span><span class="page-anchor" id="slide-50"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Claude Code 界面</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>第一眼看上去，它就是一个黑色的终端窗口，没有任何花哨的东西。这不是它的缺陷，这就是它的设计哲学</p>
+<p>它不需要好看，它需要好用，直接 直接终端运行就是没有中间商赚差价</p>
+<p>它确实有学习成本，它不像网页那样一眼就知道怎么用。</p>
+<p>但这种别扭的感觉是暂时的，用顺了之后你回不去，就像你用了智能手机之后回不去按键机一样 原生界面，适合想要最大能力、愿意接受学习曲线的人。</p>
+<p>Claude Code 界面 VS Code 插件 - 更图形化的 Claude Code 体验 信息区 对话区 输入框</p>
+<p>这种最原生的命令行的使用方式 VS Code 插件 - 更图形化的 Claude Code 体验 Claude Code 界面 - 更符合现代人的使用习惯 - 能看到文件夹 - 跟以往用的大模型方式类似，更好上手 - 各功能分区，可以拖动窗口，能同时对话和看文件 优点 缺点 - 非原生应用，体验没有终端原生丝滑 - 没有很多原生的功能</p>
+<p>文件管理区 窗口卡切换 对话区 文件阅读区</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-050.png" alt="Claude Code 界面 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-51-54">
+  <span class="page-anchor" id="slide-51"></span><span class="page-anchor" id="slide-52"></span><span class="page-anchor" id="slide-53"></span><span class="page-anchor" id="slide-54"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>除了它就没有其他AI Agent工具了吗</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从 Chat 到 Agent 工作方式」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>商业竞争会快速跟进，单个工具的优势很难长期独占。</p>
+<p>Anthropic OpenAI Google 腾讯 字节跳动 AI AGENT 产品选择 国外 御三家 国内 大厂 Claude ChatGPT Gemini CHINA all 主要模型</p>
+<p>Claude Code 是 Anthropic 出的 Agent，也是我们整个课程的核心工具</p>
+<p>它背后的模型是 Claude，在处理复杂任务、长文本理解、以及内容创作这几个维度上，目前综合表现是最好的 公认最强的 Agent</p>
+<p>第一个 Agent 产品就是 Claude 做的</p>
+<p>我们明天学的 skill，也是他们发明的</p>
+<p>用它的主要方式就命令行，还有 Vs code 里面的插件，还有一个在官方的 claude desktop 的软件里面用</p>
+<p>Claude code 的产品设计哲学就是，能力优先 不是 Anthropic 不会做图形界面，是他们主动选择不做</p>
+<p>普通软件界面是给人设计的： 打开页面、点按钮、选菜单、拖拽文件。</p>
+<p>Agent 不是这样工作的，Agent 更像一个执行任务的人，它需要连续做很多步： 不停的看文件 找文件 → 找问题 → 改内容 → 运行命令 → 看结果 → 再修改 → 再验证 这些动作在终端里最顺</p>
+<p>所以终端对普通人不友好，但对 AI 来说很友好</p>
+<p>Claude code 就是为了 AI 而服务，让 AI 在它的舒适区里干得舒服</p>
+<p>Codex 的产品性格会不太一样，降低使用门槛</p>
+<p>它一诞生就是冲着更广的受众去的，所以首先就给每个人设计了一个图形界面 更像「Agent 时代的豆包逻辑」： 不是服务少数高手，而是让更多普通人能开始使用</p>
+<p>这个逻辑就有点像 Claude 和豆包的区别。</p>
+<p>Claude 更强，更专业，但使用门槛更高。 豆包的定位不是服务少数高手，而是希望尽可能多的人都能用上 AI。 Codex 在 Agent 产品里，也有一点类似的方向。</p>
+<p>广度优先的产品，必须牺牲一部分深度控制感 换来更强的普适性和上手体验</p>
+<p>Claude Code 追求深度，Codex 追求广度。 深度产品的问题是门槛高 广度产品的问题是不能把所有能力都摊开给你</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>6</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>0</dd></div><div class="metrics__row"><dt>关键图</dt><dd>3</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-31-34"><div class="rel-card__name">Agent</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-35-38"><div class="rel-card__name">封装提示词的智能体</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-39-42"><div class="rel-card__name">为什么大模型不能看和操作我电脑里的东西，而所谓的 Agent 就可以呢</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-43-46"><div class="rel-card__name">它是电脑的超级中枢核心</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-47-50"><div class="rel-card__name">Claude Code 界面</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-51-54"><div class="rel-card__name">除了它就没有其他AI Agent工具了吗</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

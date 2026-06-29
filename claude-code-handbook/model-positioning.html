@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从模型命名理解能力与定位 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="active" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#7C2D12">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>从模型命名理解能力与定位</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">4 知识点</span><span class="text-mono ink-muted">0 材料</span><span class="text-mono ink-muted">2 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#7C2D12">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ 从模型命名理解能力与定位</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-55-58"><span class="toc-index">01</span><span>更好上手的 Agent</span></a></li><li><a href="#group-59-62"><span class="toc-index">02</span><span>决赛圈</span></a></li><li><a href="#group-63-66"><span class="toc-index">03</span><span>从 模型命名 来感受模型差异、能力与定位</span></a></li><li><a href="#group-67-69"><span class="toc-index">04</span><span>正式打开 Claude Code</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class=""><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class="is-active"><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">Model Positioning · CH 04</div><h1 class="detail__title">从模型命名理解能力与定位</h1><p class="detail__lede-body">用产品命名、能力边界和使用场景理解模型选择。</p>
+<article class="knowledge-entry page-group-card" id="group-55-58">
+  <span class="page-anchor" id="slide-55"></span><span class="page-anchor" id="slide-56"></span><span class="page-anchor" id="slide-57"></span><span class="page-anchor" id="slide-58"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>更好上手的 Agent</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从模型命名理解能力与定位」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>更好上手的 Agent 我们整个课程的核心工具 主要模型：ChatGPT Codex Claude Code 就是为人而服务，让人干得舒服 就是为AI而服务，让AI干得舒服</p>
+<p>毁灭吧我累了</p>
+<p>腾讯 字节跳动</p>
+<p>前面我们讲的是国外的「御三家」：Claude Code、Codex、Antigravity。</p>
+<p>它们的核心特点，是背后都有非常强的模型能力支撑。所以它们不只是界面做得好，而是底层模型真的能处理复杂任务 国内这边也有一些 Agent 产品，比如腾讯的 WorkBuddy，还有字节系的 Trae</p>
+<p>但这一页我不会深入讲，因为我对国内 Agent 的判断比较简单：能力不足</p>
+<p>Agent 这个东西，表面上看是产品界面，但真正决定上限的是底层模型，还有整个 Agent 的底层框架</p>
+<p>一个 Agent 想要真的好用，不只是会打开文件、点击按钮、生成内容，它还要能理解复杂需求，拆解任务，发现问题，执行多步流程，出错以后能自我修正。 这些能力背后，本质上还是模型能力</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-59-62">
+  <span class="page-anchor" id="slide-59"></span><span class="page-anchor" id="slide-60"></span><span class="page-anchor" id="slide-61"></span><span class="page-anchor" id="slide-62"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>决赛圈</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从模型命名理解能力与定位」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>从模型命名，来感受模型差异</p>
+<p>我们先不看 Claude Code 和 Codex 的界面，也不看它们谁按钮更多、谁功能更多。我们先看它们背后的模型</p>
+<p>一家公司给自己的产品起什么名字，暴露的是他们内心深处认为这个产品应该是什么东西，应该服务什么样的人，应该在人类生活里扮演什么角色 命名是一家公司最诚实的自我表达 平时真的巨多人来问我，我 xxxxx 要用什么模型，xxxxxx 要用哪个模型 我真的头都大了 …… 说白了就是不知道每个模型的产品定位，能力，风格，才会出现这些问题</p>
+<p>先看 Claude 系列 Anthropic 给模型起的名字，全部来自文学和诗歌的世界。 Haiku——俳句。日本的一种极简诗歌形式，通常只有十七个音节，三行。它的美学核心是：用最少的字，捕捉一个稍纵即逝的瞬间，然后让这个瞬间永远定格。一朵花落下来，一片云飘过去，就这样，没了，但你记住了。小，但有重量。快，但有余韵。 Sonnet——十四行诗。西方诗歌里最严谨的形式之一，莎士比亚用它写爱情，弥尔顿用它写信仰。它有固定的结构，有严格的韵律，但在这个严谨的结构里，诗人要把最复杂的情感和思想装进去。形式是约束，但约束里有深度。 Opus——拉丁语，意思是「作品」。但在音乐世界里，Opus 专门用来指一个作曲家最重要、分量最重的那一部作品。贝多芬的 Opus 131，舒伯特的 Opus posthumous——这些不是随便写的东西，是一个创作者穷尽全力的产物。 Fable——寓言。伊索寓言，格林童话，每一个寓言故事背后都藏着一个道理。它用简单的故事包裹深刻的智慧，让所有人都能读懂，但读完之后你会想很久。它是智慧的平民化表达。 Mythos——神话。不是一个故事，是一个文明的世界观底座。希腊神话、北欧神话、中国神话——神话是人类试图解释世界、解释自己从哪来、解释善恶是什么的最宏大叙事。它是文化的根，是集体无意识的载体。</p>
+<p>你把这五个名字放在一起看，会感受到人类最古老、最有深度的文化传统 Anthropic 的命名审美，表达的是他们做的不是一个工具，我们做的是一个有文化人格的存在。它懂诗，它懂故事，它懂人类几千年积累下来的智慧和情感。</p>
+<p>你跟它说一件事，它不会立刻给你一个答案。它会先感受你在说什么，感受你问题背后的那个真实困惑是什么，然后才开口。它有时候会说「我理解你的意思，但我觉得这个问题可以从另一个角度来看」——它敢有立场，敢不同意你，敢把它真实的判断说出来。</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-060.png" alt="决赛圈 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-63-66">
+  <span class="page-anchor" id="slide-63"></span><span class="page-anchor" id="slide-64"></span><span class="page-anchor" id="slide-65"></span><span class="page-anchor" id="slide-66"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>从 模型命名 来感受模型差异、能力与定位</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从模型命名理解能力与定位」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>就像 iPhone</p>
+<p>iPhone 16，就像 Windows</p>
+<p>Windows 11。 这种命名方式背后是一种思维方式：这是一个软件产品，它的核心价值是功能和性能，版本号告诉你它比上一版更强</p>
+<p>它就比较直男和理工思维，你给它一个任务，它立刻进入执行模式。结构清晰，步骤明确，要素完整，交付物规范。它不会在意这件事背后有什么感受，不会去探究你真正想要的是什么，它只想把你说的这件事做好</p>
+<p>它在处理有明确标准答案的任务时表现极好。代码对不对，逻辑通不通，数据准不准——这些有客观判断标准的事情，它做得又快又准 需要感受、需要审美、需要判断「什么样的表达更打动人」的领域，它的局限就出来了。它会给你一个符合标准的答案，但那个答案是没有温度的。</p>
+<p>GPT 被训练成极度顺从、极度有用，因为「有用」是它最重要的价值</p>
+<p>无非还是那个问题，claude 和 gpt 这两个模型，怎么选 两个不同的模型，代表了两种不同的用途，也代表了两种不同的任务特性</p>
+<p>做的是内容，是自媒体，是需要打动人、需要有人味、需要有审美的东西，并且需要一个思考能力 max，具有极强洞察力，把事情干得漂漂亮亮的，那就选 claude</p>
+<p>如果你就是拿它干活的，希望 Agent 生态很完整，有控制屏幕，控制鼠标，在浏览器里帮你扒资料，处理 ppt，处理文档，管理资料，做点图，干些不需要高审美的东西，那就选 codex</p>
+<p>我之所以会用 claude code 来切入，是基于我们首要的真实场景的 对做自媒体内容的人来说，这意味着什么</p>
+<p>你的工作本质上是在做两件事：思考和表达。 思考——你要不断地判断什么内容值得做，什么方向有潜力，你的账号该往哪走，这个选题能不能打动人。 表达——你要把想清楚的东西，用最能触动人的方式说出来。</p>
+<p>这两件事，都不是有标准答案的工程问题，都需要感受力、审美力、和真实的人文理解</p>
+<p>当然这个世界不是非黑即白的，成年人的世界从来就不是二选一 各有各的特长和特点 像我，两个都是交替着来用的 平时，xxxxxxxx 我就用 claude xxxxxxxxx，我就用 codex</p>
+<p>两个 Agent 产品，只是界面和模型性格上有所不同 应用的底层逻辑都是一样的</p>
+<p>我们学的都是怎么用好 Agent 的原理，方法，思维和底层逻辑</p>
+<p>所以工具的选择，学员后期可以自己去替换或者并行</p>
+<p>我不认为我们要从一个最简单，最小白，最傻瓜的软件来入手 Agent 而是要先从一个最适合我们的 Agent 开始</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-065.png" alt="从 模型命名 来感受模型差异、能力与定位 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-67-69">
+  <span class="page-anchor" id="slide-67"></span><span class="page-anchor" id="slide-68"></span><span class="page-anchor" id="slide-69"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>正式打开 Claude Code</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「从模型命名理解能力与定位」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>正式打开 Claude Code</p>
+<p>网页打开即用，打开一个对话框，开始聊，按对话窗口来分类历史 这是我们一贯用大模型的方式，也是大模型跟我们交互的基础逻辑</p>
+<p>我们习惯了这种聊天机器人的产品逻辑</p>
+<p>Claude Code 以打开一个文件夹作为项目起始点来开始的 这种方式来源于编程和项目开发，在编程生态里，一个网站，一个 app，是一个文件夹，里面有大量的架构，代码和功能，要开发或者修改一个程序，就是打开这个程序的文件夹来工作的 什么叫项目制？就是你先建一个文件夹，这个文件夹就是它的整个世界</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>4</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>0</dd></div><div class="metrics__row"><dt>关键图</dt><dd>2</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-55-58"><div class="rel-card__name">更好上手的 Agent</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-59-62"><div class="rel-card__name">决赛圈</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-63-66"><div class="rel-card__name">从 模型命名 来感受模型差异、能力与定位</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-67-69"><div class="rel-card__name">正式打开 Claude Code</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

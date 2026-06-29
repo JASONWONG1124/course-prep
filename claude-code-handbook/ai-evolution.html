@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 应用方式的进化 · Claude Code 讲义</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' fill='%23111'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar rule-bottom">
+  <div class="container-home topbar__inner">
+    <a href="index.html" class="topbar__brand" aria-label="Claude Code 知识库首页"><span class="topbar__logo-mark"></span><span class="topbar__logo-text">SANHE CLAUDE CODE</span></a>
+    <div class="topbar__search"><button type="button" id="global-search" class="search search--trigger" aria-label="打开全站搜索"><span class="search__icon">⌕</span><span class="search__placeholder ink-muted">搜索章节、Skill、提示词、YAML…</span><span class="search__kbd">/</span></button></div>
+    <nav class="topbar__nav" aria-label="主导航"><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a></nav>
+    <button class="topbar__hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="topbar__mobile-menu" id="mobile-menu" hidden><a href="index.html">首页</a><a class="" href="all.html">索引</a>
+<a class="" href="learning-path.html">学习路径</a>
+<a class="" href="scenarios.html">复盘场景</a>
+<a class="" href="resources.html">资料库</a>
+<a class="" href="about.html">关于</a><a class="" href="opening.html">开场与学习路径</a>
+<a class="active" href="ai-evolution.html">AI 应用方式的进化</a>
+<a class="" href="agent-workstyle.html">从 Chat 到 Agent 工作方式</a>
+<a class="" href="model-positioning.html">从模型命名理解能力与定位</a>
+<a class="" href="project-world.html">Claude Code 与文件夹即世界</a>
+<a class="" href="claude-md.html">CLAUDE.md 与规则系统</a>
+<a class="" href="hands-on-project.html">动手搭建个人项目基础</a>
+<a class="" href="obsidian.html">Obsidian 本地知识库</a>
+<a class="" href="three-way-link.html">Claude Code × Obsidian × 飞书</a>
+<a class="" href="summary.html">总结、答疑与课后行动</a></nav>
+</header>
+
+
+<div class="breadcrumb rule-bottom" style="--disc-color:#C2410C">
+  <div class="breadcrumb__inner"><a href="index.html" class="ink-muted">首页</a><span class="ink-ghost">/</span><span><i class="bc__dot"></i>AI 应用方式的进化</span><div class="breadcrumb__meta"><span class="text-mono ink-muted">7 知识点</span><span class="text-mono ink-muted">0 材料</span><span class="text-mono ink-muted">10 关键图</span></div></div>
+</div>
+<div class="detail" style="--disc-color:#C2410C">
+  <aside class="detail__left"><div class="side-group"><div class="side-group__head text-mono accent">/ AI 应用方式的进化</div><ol class="side-list side-list--toc chapter-toc"><li><a href="#group-5-8"><span class="toc-index">01</span><span>从 Chat 到 Agent：协作关系变深</span></a></li><li><a href="#group-9-12"><span class="toc-index">02</span><span>Prompt Engineering</span></a></li><li><a href="#group-13-16"><span class="toc-index">03</span><span>Minor Adjustments in the Prompt Stage</span></a></li><li><a href="#group-17-20"><span class="toc-index">04</span><span>Minor Adjustments in the Prompt Stage</span></a></li><li><a href="#group-21-24"><span class="toc-index">05</span><span>Chat 方式的边界：记忆、现场和知识</span></a></li><li><a href="#group-25-28"><span class="toc-index">06</span><span>AI味是怎么来的</span></a></li><li><a href="#group-29-30"><span class="toc-index">07</span><span>扑克牌 案例</span></a></li></ol></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 课程章节</div><ul class="side-list"><li class=""><a href="opening.html"><i class="bc__dot" style="background:#7E22CE"></i><span>开场与学习路径</span></a></li><li class="is-active"><a href="ai-evolution.html"><i class="bc__dot" style="background:#C2410C"></i><span>AI 应用方式的进化</span></a></li><li class=""><a href="agent-workstyle.html"><i class="bc__dot" style="background:#B45309"></i><span>从 Chat 到 Agent 工作方式</span></a></li><li class=""><a href="model-positioning.html"><i class="bc__dot" style="background:#7C2D12"></i><span>从模型命名理解能力与定位</span></a></li><li class=""><a href="project-world.html"><i class="bc__dot" style="background:#166534"></i><span>Claude Code 与文件夹即世界</span></a></li><li class=""><a href="claude-md.html"><i class="bc__dot" style="background:#0E7490"></i><span>CLAUDE.md 与规则系统</span></a></li><li class=""><a href="hands-on-project.html"><i class="bc__dot" style="background:#1D4ED8"></i><span>动手搭建个人项目基础</span></a></li><li class=""><a href="obsidian.html"><i class="bc__dot" style="background:#0F766E"></i><span>Obsidian 本地知识库</span></a></li><li class=""><a href="three-way-link.html"><i class="bc__dot" style="background:#475569"></i><span>Claude Code × Obsidian × 飞书</span></a></li><li class=""><a href="summary.html"><i class="bc__dot" style="background:#9333EA"></i><span>总结、答疑与课后行动</span></a></li></ul></div></aside>
+  <main class="detail__main"><div class="detail__body"><div class="text-micro accent">AI Evolution · CH 02</div><h1 class="detail__title">AI 应用方式的进化</h1><p class="detail__lede-body">从 Chat、Prompt 到伪智能体，理解为什么单次对话会碰到边界。</p>
+<article class="knowledge-entry page-group-card" id="group-5-8">
+  <span class="page-anchor" id="slide-5"></span><span class="page-anchor" id="slide-6"></span><span class="page-anchor" id="slide-7"></span><span class="page-anchor" id="slide-8"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>从 Chat 到 Agent：协作关系变深</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>AI 的更新速度快得简直让人感到邪门，几乎是以月来进行技术革新的 各种大模型的演化，进化，各种 AI 范式的建立，智能体，Agent，Claude Code，Codex，OpenClaw，Harness，最近还出了个 LoopEngineering，还有 FDE</p>
+<p>根本就学不完</p>
+<p>其实 AI 的发展，大体上就是从对话进化到 Agent 这一个主线 其他都是支线 而从对话，往上升级到 Agent，并不是技术发展得多快，多牛逼，大模型还是那个大模型，我们跟 AI 的交互，依旧是我们输入，他输出 他输出得好，就皆大欢喜 他输出得不好，就开喷 不管怎么往上发展， 不同的人，在同一个时代里，和 AI 建立着完全不同深度的关系</p>
+<p>早期的时候，大家对 AI 还是很陌生的，也没想到能干嘛，所以 AI = 一个更好的搜索框 当时大多数人的用法是这样的： - 我有一个问题 → 我问它 → 它给我答案 - 我要写一封邮件 → 我描述需求 → 它生成文本 我要了解一个概念 → 我提问 → 它解释</p>
+<p>「帮我查一下……」 - 「某某是什么？」 「给我列出十条……」</p>
+<p>我们理解新事物的方式，永远是用已知的框架去套未知的东西。AI 出现的时候，人们手边最近的参照物就是搜索引擎——谷歌、百度。那已经是「最聪明的机器」了。所以第一反应就是：这是一个更聪明的搜索框</p>
+<p>再往后进化一下，发现它好像也有思考能力，当然这个思考能力这个词，是要打上双引号的 就会变成 「你怎么看待这件事？」 或者 「如果换一个角度，会有什么不同？」</p>
+<p>大多数人的使用，始终是对话。 这是 AI 最大的存量市场，也是最稳定的使用形态。 不是智商的差异，不是技术能力的差异，本质上是需求深度和生活场景决定的。</p>
+<p>一个家庭主妇用 AI 帮她规划一周的菜单，这个需求被对话完美满足了，她没有任何理由去深入更多。一个律师用 AI 帮他快速检索判例，对话也够了</p>
+<p>最开始你只是偶尔问它一个问题。慢慢地你发现，某类工作，换一个使用方式，交给它效率会高很多，大家慢慢的就会延伸出更多的范式</p>
+<p>AI = 一个更好的搜索框，所以早期大多数人的用法是这样的： - 我有一个问题 → 我问它 → 它给我答案 - 我要写一封邮件 → 我描述需求 → 它生成文本 我要了解一个概念 → 我提问 → 它解释</p>
+<p>再往后进化一下，发现它好像也有思考能力，当然这个思考能力这个词，是要打上双引号的，为什么？ 慢慢就会变成，我们会问大模型，「你怎么看待这件事？」 或者 「如果换一个角度，会有什么不同？」这些带有主观判断色彩的问题</p>
+<p>直到现在，大多数人的使用方式，始终是对话。 这是 AI 最大的存量市场，也是最稳定的使用形态。 不是智商的差异，不是技术能力的差异，本质上是需求深度和生活场景决定的。</p>
+<p>一个家庭主妇用 AI 帮她规划一周的菜单，这个需求被对话完美满足了，她没有任何理由去深入更多。一个律师用 AI 帮他快速检索判例，对话也够了 最开始你只是偶尔问它一个问题。慢慢地你发现，某类工作，换一个使用方式，交给它效率会高很多，大家慢慢的就会延伸出更多的范式</p>
+<p>Prompt Engineering 提示词 AI 的进化不只发生在模型参数里，更发生在人和 AI 的协作方式 AI 应用方式的进化 大模型对话 Chat</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-005.png" alt="从 Chat 到 Agent：协作关系变深 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-9-12">
+  <span class="page-anchor" id="slide-9"></span><span class="page-anchor" id="slide-10"></span><span class="page-anchor" id="slide-11"></span><span class="page-anchor" id="slide-12"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Prompt Engineering</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>用着用着，很多人开始意识到一个事情，我们和 AI 的关系是双向的</p>
+<p>第一阶段是单向的，AI 是一个知识库，我问，它答 回答得出来，你就是聪明，你回答不出来，我不满意，就是你笨</p>
+<p>到了这个阶段，大家意识到 AI 更像一个执行者，它的能力是够的，但它需要你给它足够清晰的指令 逐渐发现，模型能力压根就不是瓶颈，沟通才是</p>
+<p>这个转变带来了一个根本性的变化：大家开始对输出质量承担责任 以前结果不好，是 AI 不行。现在结果不好，你会先想，是否我没说清楚</p>
+<p>我们开始在意怎么「说话」「好好说话」开始思考我的需求到底是什么，我想要的边界在哪里，我需要给它什么背景信息，我希望它用什么语气、什么格式输出 这些问题以前根本不会问，因为用搜索引擎你不需要想这些</p>
+<p>但现在你要想了 输入变成了一件需要设计的事情</p>
+<p>这个阶段真正的核心能力，不是会写提示词，而是会想清楚自己要什么</p>
+<p>一种新的思维习惯——在开口之前，先想清楚</p>
+<p>不是有人宣布了一个新阶段，而是大量用户在使用过程中撞墙之后，自然形成的集体认知。 撞墙的体验很具体：你问了，它答了，但答的不是你想要的。你再问，还是不对。你开始怀疑，是否我没说清楚？</p>
+<p>这个「没说清楚」的自我反思，就是提示词意识的起点</p>
+<p>「想清楚自己要什么」是一件很难的事，而且它到底难在哪里，大多数人说不清楚</p>
+<p>第一层：你不知道自己要什么。 这是最常见的状态。你进来问 AI，问题是「帮我写一篇关于 XXX 的文章」——但你对「好文章」的标准是模糊的，你对受众是谁没有判断，你不知道这篇文章最后要用在哪里、解决什么问题。这时候 AI 给出的任何答案都会让你觉得「差点意思」，但你又说不出哪里差。</p>
+<p>第二层：你知道自己要什么，但你不知道那个「什么」叫什么名字。 这更难处理。你心里有一个感觉——「我要的就是那种读起来很爽、但又不会觉得被说教的感觉」——但你没有概念工具来框住它。你无法把它说给 AI 听，因为你连说给自己听都不够精准。 语言的限制在这里不是表达能力的问题，而是概念库的问题。你没有足够的词，不是因为你懒，而是因为你从来没有被迫把这件事说清楚过</p>
+<p>第三层：你知道自己要什么，也能说出来，但你说出来的那个东西，不是你真正要的。</p>
+<p>你以为你要的是「一个商业计划书」，但你真正要的是「让投资人相信你」；你以为你要的是「改简历」，但你真正要的是「在面试中不被秒拒」。 问题提错了，所以 AI 的答案再好也答不中</p>
+<p>我们人类从来都活在一个模糊的世界里。</p>
+<p>你跟朋友说「今天那个菜，贼好吃对吧」——你没说是哪道菜，你朋友秒懂。这不是因为学员心灵感应，是因为学员有共同的记忆、共同的经历，有大量的「不用说出来大家都知道」的东西在托着这段对话。 这叫共识。人类的交流，大部分时候靠的就是这个。说半句话，对方补上后半句，事情就办成了。我们在这种模糊里活得很自在，活了几万年。</p>
+<p>但 AI 来了之后，这套东西失效了。</p>
+<p>你跟 AI 说「帮我写个好文章」，它没有你的记忆，不知道你觉得什么叫好，不知道你要给谁看，不知道你想解决什么问题。它只能用它自己的平均值来填，而那个平均值，往往正好是你最不想要的那种。</p>
+<p>所以 AI 会逼你做一件事：把你原来依赖「大家都懂」省掉的那些话，重新一句一句说出来。 说出来之前，你得先想清楚。 这就是为什么很多人用 AI 用得很挫败 不是因为 AI 不够聪明，是因为 AI 是一个不帮你补全、不帮你猜、逼你把话说完的对象。它是你遇到过的最严厉的沟通对象</p>
+<p>很多人给 AI 设定角色。 「你是一个资深营销顾问」「你是一个有十年经验的程序员」 人们发现，给它一个身份，它的回答质量和视角会明显不同 角色设定成了提示词里几乎人人都会用的基础操作。 开始用结构化的方式写提示词。 背景、任务、要求、格式、限制，把一个需求拆成几个维度，逐条说清楚。不再是一句话扔过去，而是一段话，甚至几段话。 开始积累和收藏提示词。 用过一个效果好的提示词，会存下来。看到别人分享的好提示词，会收藏。这个阶段很多人开始有自己的「提示词库」，就像以前收藏好用的工具一样。</p>
+<p>「万能提示词框架」「写文案必备提示词」「程序员必备十条提示词」——这类内容的流量极好，因为它非常直接地解决了大量用户的痛点 提示词工程的本质，还是在优化单次对话的质量</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-011.png" alt="Prompt Engineering 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-012.png" alt="Prompt Engineering 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-13-16">
+  <span class="page-anchor" id="slide-13"></span><span class="page-anchor" id="slide-14"></span><span class="page-anchor" id="slide-15"></span><span class="page-anchor" id="slide-16"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Minor Adjustments in the Prompt Stage</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>大家用着用着，又开始发现问题了 都觉得自己说清楚了，但 AI 给你的不是你想要的</p>
+<p>问题一：词语有歧义，AI 的理解和你的理解不一样。</p>
+<p>你说「口语化」，AI 给你的是它训练数据里最常见的「口语化」——可能是「家人们」「绝绝子」这种网红腔，但你想要的是朋友之间聊天那种随意感。同一个词，两种理解，你没办法通过自然语言把这个缝隙填死。 「专业一点」</p>
+<p>AI 可能理解成： 多加术语、多用行业词、多写长句。</p>
+<p>但你真正想要的可能是： 判断更稳、表达更克制、逻辑更清楚，不要像外行在硬装。 「专业」不是一个固定风格，它可能指知识密度，也可能指语气，也可能指结构，也可能指可信度</p>
+<p>「把这个内容做得更高级一点」</p>
+<p>AI 不知道「高级」到底指什么： 视觉更高级？ 语言更高级？ 观点更高级？ 结构更高级？ 商业感更强？ 少一点廉价营销味？</p>
+<p>所以它很容易给你一堆抽象词：赋能、闭环、沉淀、生态、跃迁。 因为在训练数据里，这些东西经常和「高级」一起出现。</p>
+<p>「他谁都看不上」 可能是： 他瞧不起所有人。 也可能是： 没有人配得上他。</p>
+<p>问题二：你说了十条要求，AI 不知道哪条最重要。 「要口语化、要有钩子、不要排比句、结尾要有进店冲动、不要书面语、字数控制在 500 字……」</p>
+<p>你列了一堆，AI 会自己权衡，它认为重要的和你认为重要的未必一致。 结果出来，某几条执行了，某几条被忽略了，你也不知道为什么</p>
+<p>问题三：同样的提示词，每次结果都不一样。</p>
+<p>你上次用这个提示词效果很好，这次用感觉差了一截。自然语言的模糊性导致 AI 每次的理解都有细微偏差，结果就有随机性。你没办法稳定复现一个好结果。 因为本来AI本身基于概率预测生成文字</p>
+<p>这些问题累积下来，用户开始意识到一件事：</p>
+<p>自然语言本身就不是一个精确的工具。它允许模糊，允许歧义，允许语境补充。但这些特性在提示词里全都是漏洞。</p>
+<p>人类的语言，从来就不是为了精确而设计的。</p>
+<p>它是为了沟通而设计的 而沟通这件事，从来都不只依赖语言本身，它依赖表情、语气、肢体动作、共同的生活经验、说话时的场景，还有大量双方心照不宣的默认设定。</p>
+<p>你跟朋友说：「这家餐厅还不错。」 朋友立刻懂了你的意思——可能是食材新鲜，可能是性价比高，可能是环境舒服。他不会追问「不错」的定义是什么，因为他了解你，知道你说「不错」通常是什么意思。</p>
+<p>但 AI 不了解你。它听到「不错」，它只能用它训练数据里最常见的「不错」来理解。学员对这个词的默认设定可能完全不同。</p>
+<p>人类语言里充满了这种默认设定。</p>
+<p>「早点回来」——多早？ 「写得自然一点」——什么叫自然？ 「帮我整理一下」——整理到什么程度？ 「专业但不要太正式」——这个边界在哪？</p>
+<p>这些话人和人之间说完全没问题，因为人会结合关系、场景、过往经验自动补全。两个合作多年的同事，一个说「你懂的」，另一个真的懂。</p>
+<p>但这个「自动补全」的能力，建立在大量共同经验的积累上。AI 和你没有这种积累，它每次都是第一次认识你。</p>
+<p>你跟 AI 说出口的那句话，就是全部信息。没有表情，没有语气，没有共同经验，没有行业默认值。AI 能拿到的，只有你打出来的那几个字</p></div></section>
+      
+    </div>
+  </div>
+  
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-17-20">
+  <span class="page-anchor" id="slide-17"></span><span class="page-anchor" id="slide-18"></span><span class="page-anchor" id="slide-19"></span><span class="page-anchor" id="slide-20"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Minor Adjustments in the Prompt Stage</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>Minor Adjustments in the Prompt Stage 提示词阶段的小变化 AI 的进化不只发生在模型参数里，更发生在人和 AI 的协作方式 AI 应用方式的进化 进阶 自然语言 LISP语言 我们开始学习「和 AI 说话」</p>
+<p>自然语言是让 AI 理解你 而Lisp 结构是让 AI 没有办法误解你，不需要你理解，只需要你执行 LISP 是一种代码，代码是这个世界上，最没有歧义的语言，所见即所得，对就是皆大欢喜，错就会报 bug</p>
+<p>代码式提示词是在用编程语言的精确性，来弥补自然语言的模糊性 全都是显式定义的，没有任何模糊空间</p>
+<p>前者更像提需求 后者更像让 AI 构成一个系统，让 AI 只在这个系统里打转，不能越界</p>
+<p>将固定角色、知识和流程组合成专用工具，解决稳定、重复的单点任务</p>
+<p>把提示词，封装成一个可以被调用的工具 把提示词藏到后台，给它包一个壳，让用户直接用这个壳。</p>
+<p>这个壳，就被叫做「智能体」</p>
+<p>它带来了什么变化</p>
+<p>第一，使用门槛大幅降低。 以前要会写提示词才能用好 AI，现在不需要了。有人把提示词写好封装进去，另一个人直接用就行。写文案找文案智能体，做选题找选题智能体，翻译找翻译智能体——对应需求找对应工具，跟用 App 没什么两样。</p>
+<p>第二，提示词变成了可以流通的东西。</p>
+<p>一个人花时间打磨出来的好提示词，封装成智能体之后可以分享给所有人用。这个智能体本身变成了一种内容，可以传播，可以积累用户，甚至可以变现。平台上开始出现专门做智能体的创作者，他们的核心资产就是那套封装在里面的提示词。</p>
+<p>第三，AI 开始有了「人设」。 因为封装了角色设定，每个智能体都有自己的名字、性格、专长。用户和它对话，感受不是在用一个工具，更像是在找一个专门负责某件事的助手。这种感受上的变化，让 AI 的使用体验从「用搜索引擎」进一步走向了「找专业的人帮忙」。</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-018.png" alt="Minor Adjustments in the Prompt Stage 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-21-24">
+  <span class="page-anchor" id="slide-21"></span><span class="page-anchor" id="slide-22"></span><span class="page-anchor" id="slide-23"></span><span class="page-anchor" id="slide-24"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>Chat 方式的边界：记忆、现场和知识</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>但是很快，就发现了问题</p>
+<p>你今天告诉它你是做本地生活的、你的账号风格是什么、你的目标客户是谁，明天打开新对话，它不认识你。学员的关系永远停留在「初次见面」，永远无法积累</p>
+<p>人和人之间的关系之所以会越来越深，是因为有记忆的积累。我知道你上次说了什么，我知道你的习惯，我知道你不喜欢什么。AI 在提示词阶段没有这个能力。每一次对话都是一段独立的、孤立的关系，结束了就消失了</p>
+<p>那一直聊不就行了，我就不开新窗口 什么训练 AI，都胡扯，那纯是上下文的机制 大多数人以为 AI 在「记住」对话，其实它没有</p>
+<p>大模型处理上下文有一个特性</p>
+<p>它对近期内容的注意力，天然强于对早期内容的注意力。当对话积累到一定长度，早期的信息开始被稀释。你在对话开头说过的重要背景、你的身份、你的要求，它慢慢就「忘了」。</p>
+<p>不是真的忘了，那些文字还在打包里。但它的注意力已经分配不过来了，早期内容对它的影响越来越弱</p>
+<p>它看不到窗口以外的任何东西。你的电脑桌面、你正在写的文档、你的微信消息、你的数据表格——这些对它来说都不存在。它的世界边界就是那个输入框。</p>
+<p>你想让它帮你做一件事，你必须先把所有相关信息手动搬进那个框里。这个搬运的过程，本身就是巨大的摩擦。而且你能搬进去的永远是片段，不是全貌</p>
+<p>你每天在处理的东西——微信里的客户消息、飞书里的文档、Excel 里的数据表、手机里的截图、浏览器里打开的十几个标签页、正在写到一半的文案草稿——这些构成了你真实的工作世界</p>
+<p>AI 对这一切一无所知</p>
+<p>你在用语言向它描述你的世界，有谁能把自己在做的业务，全部摊开给 AI？任何细节，一字不落，用放大镜都找不到模糊点？ 语言描述现实，永远是有损压缩</p>
+<p>网恋就等于，你跟他进行着一场酣畅淋漓的异地恋 今天你吃到了一个很好吃的雪糕</p>
+<p>但他却没办法品尝那个让你开心的滋味</p>
+<p>你说「我的客户是做餐饮的中小商家」——这句话背后其实包含了你对这群人的大量具体认知：他们的决策习惯、他们对价格的敏感度、他们最常见的焦虑是什么、他们喜欢什么样的沟通方式。但这些细节，你不可能在一句话里全部说清楚。</p>
+<p>你说出来的是一个概念，AI 接收到的也是一个概念，但你脑子里真正存的是几年的具体经验。这中间的差距，是无法通过打字来填平的</p>
+<p>它优化的是一次对话的质量，但它改变不了 AI 和你的关系结构</p>
+<p>我相信这个角度，学员很多人都没有意识到</p>
+<p>大模型的知识是怎么来的，决定了它的知识有什么问题</p>
+<p>它是从公开的互联网文本里训练出来的。互联网上有什么？有知识，但也有大量的错误、过时的信息、互相矛盾的观点、以讹传讹的说法。这些东西一起进了训练数据，大模型没有能力在训练的时候把对的和错的分开——它学的是「哪种说法出现得更多」，不是「哪种说法是对的」。</p>
+<p>所以它给你的答案，本质上是一个概率加权的公众意见，不是经过验证的事实 自媒体平台的算法逻辑，可能半年就变一次。去年有效的选题方向，今年可能已经完全跑不通了。平台对某类内容的流量倾斜，今天还在，明天可能就没了。</p>
+<p>但大模型的知识库是静止的。它知道的是它被训练时的世界，不是现在的世界。你问它今年装修设计赛道的选题逻辑，它给你的可能是两年前的经验——那时候有效的打法，现在可能已经死了。</p>
+<p>它不会告诉你它的答案可能过时了，它会用同样自信的语气把过时的东西说给你听。</p>
+<p>大模型能给的是：基于公开互联网文本训练出来的、关于自媒体选题的通用知识 这两件事之间的距离，不是把问题问得更清楚就能填平的</p>
+<p>你问它的质量再高，它给你的上限，是它训练知识库的上限 行业细节、当下生态、隐性经验，这些你最需要的东西，就是最薄弱的，它也不知道</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-022.png" alt="Chat 方式的边界：记忆、现场和知识 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-023.png" alt="Chat 方式的边界：记忆、现场和知识 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-024.png" alt="Chat 方式的边界：记忆、现场和知识 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-25-28">
+  <span class="page-anchor" id="slide-25"></span><span class="page-anchor" id="slide-26"></span><span class="page-anchor" id="slide-27"></span><span class="page-anchor" id="slide-28"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>AI味是怎么来的</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>如果学员感受不到大模型本身知识库的局限性，看一下我给学员准备的几个例子</p>
+<p>互联网上的公开文本是什么构成的？ 大量的公众号文章、知乎回答、百度百科、各种平台的内容——这些内容里有一个高度重复的写作模式：喜欢升华、喜欢金句、喜欢「不是 A 而是 B」的对仗结构、喜欢在结尾来一句「愿你如何如何」</p>
+<p>这种写法越来越多？因为它在互联网上传播效果好，容易被转发，容易被收藏。所以它的数量极大，在训练数据里占了很高的比重。</p>
+<p>AI 味，就是互联网上最泛滥的写作习惯，被大模型学成了默认风格 尤其是那些门户网站的文章，公众号文章、SEO 文章、营销文案、新闻通稿、知识付费文案、企业官网、百科、论文摘要、课程稿、鸡汤文、演讲稿</p>
+<p>大模型学到的，恰恰是互联网内容生产里最平庸的那一层。 真正有价值的内容——一个老师傅几十年积累的手艺经验、一个行业老兵踩坑之后写下的真实复盘、一个创作者对自己风格长达数年的打磨——这类内容在互联网上的数量其实很少，而且很多根本没有被公开发布过。 大模型拥有这么强的推理能力和逻辑能力、归纳总结的能力、思考能力。但偏偏它受限于它那个知识库</p>
+<p>如果学员感受不到大模型本身知识库的局限性，不妨看一下我给学员精心准备的例子 互联网上的公开文本是什么构成的？</p>
+<p>它的数量极大，在训练数据里占了很高的比重。</p>
+<p>真正有价值的内容——</p>
+<p>一个老师傅几十年积累的手艺经验、一个行业 OG 踩坑的真实复盘、一个创作者对自己风格长达数年的打磨 这类内容在互联网上的数量其实很少，而且很多根本没有被公开发布过。 大模型拥有这么强的推理能力和逻辑能力、归纳总结的能力、思考能力。但偏偏它受限于它那个知识库</p>
+<p>这是训练语料的污染，也是为什么 AI 的输出，我们不满意又说不出原因的原因</p>
+<p>钟表时间 案例 AI 的进化不只发生在模型参数里，更发生在人和 AI 的协作方式 AI 应用方式的进化</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-028.png" alt="AI味是怎么来的 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+
+
+<article class="knowledge-entry page-group-card" id="group-29-30">
+  <span class="page-anchor" id="slide-29"></span><span class="page-anchor" id="slide-30"></span>
+  <div class="knowledge-entry__main">
+    <div class="knowledge-entry__meta"><span class="entry-dot"></span>知识小节</div>
+    <h2>扑克牌 案例</h2>
+    <div class="knowledge-entry__body">
+      <section class="page-group-intent"><h3>学习目标</h3><p>这一节用于理解「AI 应用方式的进化」里的关键概念、使用场景和判断边界。</p></section>
+      <section class="source-replay"><h3>知识讲解</h3><div class="article-body"><p>这两个实验，一个是扑克牌，一个是看时间。 表面上看，都是 AI 连小学生问题都答错了。但真正的问题不是它不知道扑克牌有 4 张 A，也不是它不知道钟表怎么看。</p>
+<p>更加不能完全 100%相信它脑子里的知识库、经验和判断</p>
+<p>它的「常识」来自语料、图片、视频、文本规律，是统计出来的、压缩出来的，不是像人一样通过身体经验、物理接触、因果反馈建立起来的</p>
+<p>大模型的回答，在很多场景下会显得很刻板。因为它并不是像人一样真正生活在这个世界里，亲眼看见一副牌被拿走了四张 A，也不是像人一样真的理解钟表指针和时间之间的物理关系。</p>
+<p>它更多是在做一件事：根据输入内容，预测最可能出现的答案。</p>
+<p>所以扑克牌这个案例里，它的知识库里有一个特别强的规律：一副标准扑克牌 52 张，其中有 4 张 A。于是当你问「还能不能抽到 A」，它很容易调用这个高频知识，回答 4/52。</p>
+<p>但问题是，当前场景已经变了：四张 A 已经摆在桌上了。对人来说，这是一个物理世界里的状态变化；但对大模型来说，它只是二维图片里的几个视觉特征。它不一定能稳定地把「画面中有四张 A」转化成「这副牌里的 A 已经全部被移出牌堆」。 钟表也是一样。</p>
+<p>它不是完全不知道怎么看时间，而是它没有真正拿着表、理解指针在空间里的精确角度。它看到的是图片里的线条、数字、刻度、Logo、表盘结构。再加上训练资料里大量手表广告都停在 10:10 左右，所以当它生成或识别手表时，就容易被这个最高频的图像模式带偏。</p>
+<p>所以这两个案例真正说明的不是「AI 很笨」，而是： 大模型的知识是统计知识，不是世界模型；它的回答是概率生成，不是现场验证。</p>
+<p>说白了，AI 大模型就是在你的问题里，用最高的概率来猜答案，而且那些答案，大概率都是互联网上的垃圾</p>
+<p>我们刚才从 Chat、提示词、伪智能体，一路看到了几个问题。</p>
+<p>一开始我们以为，是自己提示词写得不够好。后来发现，就算提示词越来越长、越来越结构化，问题也没有完全消失。 因为真正的限制不只在「问法」，而在 AI 的工作环境。</p>
+<p>它没有稳定记忆，不知道我们的业务现场，也不能完全依赖自己的知识库。它的回答很大程度来自公开互联网的高频模式，所以会有 AI 味，会过时，会刻板，也会在扑克牌和钟表这种具体场景里翻车。</p></div></section>
+      
+    </div>
+  </div>
+  <aside class="knowledge-entry__side"><div class="slide-gallery"><figure class="slide-image"><img src="assets/slides/slide-029.png" alt="扑克牌 案例 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure><figure class="slide-image"><img src="assets/slides/slide-030.png" alt="扑克牌 案例 对应课件画面" class="lightbox-trigger"><figcaption>课件画面</figcaption></figure></div></aside>
+</article>
+</div></main>
+  <aside class="detail__right"><div class="side-group"><div class="side-group__head text-mono accent">/ 章节速览</div><dl class="metrics"><div class="metrics__row"><dt>知识点</dt><dd>7</dd></div><div class="metrics__row"><dt>复盘材料</dt><dd>0</dd></div><div class="metrics__row"><dt>关键图</dt><dd>10</dd></div></dl></div><div class="side-group"><div class="side-group__head text-mono ink-muted">/ 相关知识点</div><div class="related-list"><a class="rel-card" href="#group-5-8"><div class="rel-card__name">从 Chat 到 Agent：协作关系变深</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-9-12"><div class="rel-card__name">Prompt Engineering</div><div class="text-mono ink-muted">0 材料 · 2 图</div></a><a class="rel-card" href="#group-13-16"><div class="rel-card__name">Minor Adjustments in the Prompt Stage</div><div class="text-mono ink-muted">0 材料 · 0 图</div></a><a class="rel-card" href="#group-17-20"><div class="rel-card__name">Minor Adjustments in the Prompt Stage</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a><a class="rel-card" href="#group-21-24"><div class="rel-card__name">Chat 方式的边界：记忆、现场和知识</div><div class="text-mono ink-muted">0 材料 · 3 图</div></a><a class="rel-card" href="#group-25-28"><div class="rel-card__name">AI味是怎么来的</div><div class="text-mono ink-muted">0 材料 · 1 图</div></a></div></div></aside>
+</div>
+
+<footer class="footer"><div class="container-home footer__inner"><span>三和SANHE · Claude Code 课程知识库</span><span class="text-mono">v2026</span></div></footer>
+
+<div class="search-modal" id="search-modal" aria-hidden="true">
+  <div class="search-modal__backdrop" id="search-backdrop"></div>
+  <div class="search-modal__panel" role="dialog" aria-modal="true" aria-label="全站搜索">
+    <div class="search-modal__header"><span class="search__icon">⌕</span><input id="search-input" placeholder="搜索 Claude Code、world-mapper、YAML、Source of Truth"><span class="search__kbd">Esc</span></div>
+    <div class="search-modal__body" id="search-results"></div>
+    <div class="search-modal__foot text-micro ink-muted"><span><kbd>↑↓</kbd> 选择</span><span><kbd>Enter</kbd> 打开</span><span><kbd>/</kbd> 搜索</span></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox"><div class="lightbox__overlay" id="lightbox-overlay"></div><button class="lightbox__close" id="lightbox-close">×</button><div class="lightbox__content"><img id="lightbox-img" src="" alt=""></div></div>
+<script src="search-index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
